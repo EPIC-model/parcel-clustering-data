@@ -1,0 +1,2762 @@
+Loading the Cray Compiling Environment (CCE)
+PrgEnv-cray/8.5.0(161):ERROR:150: Module 'PrgEnv-cray/8.5.0' conflicts with the currently loaded module(s) 'PrgEnv-cray/8.6.0'
+PrgEnv-cray/8.5.0(161):ERROR:102: Tcl command execution failed: conflict PrgEnv-cray
+
+cce/17.0.0(11):ERROR:150: Module 'cce/17.0.0' conflicts with the currently loaded module(s) 'cce/18.0.1'
+cce/17.0.0(11):ERROR:102: Tcl command execution failed: conflict cce
+
+cray-mpich/8.1.28(11):ERROR:150: Module 'cray-mpich/8.1.28' conflicts with the currently loaded module(s) 'cray-mpich/8.1.31'
+cray-mpich/8.1.28(11):ERROR:102: Tcl command execution failed: conflict cray-mpich
+
+cray-hdf5-parallel/1.12.2.9(9):ERROR:150: Module 'cray-hdf5-parallel/1.12.2.9' conflicts with the currently loaded module(s) 'cray-hdf5-parallel/1.14.3.3'
+cray-hdf5-parallel/1.12.2.9(9):ERROR:102: Tcl command execution failed: conflict cray-hdf5-parallel
+
+cray-netcdf-hdf5parallel/4.9.0.9(11):ERROR:150: Module 'cray-netcdf-hdf5parallel/4.9.0.9' conflicts with the currently loaded module(s) 'cray-netcdf-hdf5parallel/4.9.0.15'
+cray-netcdf-hdf5parallel/4.9.0.9(11):ERROR:102: Tcl command execution failed: conflict cray-netcdf-hdf5parallel
+
+cray-dsmml/0.2.2(7):ERROR:150: Module 'cray-dsmml/0.2.2' conflicts with the currently loaded module(s) 'cray-dsmml/0.3.0'
+cray-dsmml/0.2.2(7):ERROR:102: Tcl command execution failed: conflict cray-dsmml
+
+cray-openshmemx/11.7.0(8):ERROR:150: Module 'cray-openshmemx/11.7.0' conflicts with the currently loaded module(s) 'cray-openshmemx/11.7.3'
+cray-openshmemx/11.7.0(8):ERROR:102: Tcl command execution failed: conflict cray-openshmemx
+
+Switching to PrgEnv-cray/8.6.0.
+Switching to cce/18.0.1.
+Switching to cray-dsmml/0.3.0.
+Switching to cray-hdf5-parallel/1.14.3.3.
+Switching to cray-libsci/24.11.0.
+Switching to cray-mpich/8.1.31.
+Switching to cray-netcdf-hdf5parallel/4.9.0.15.
+Switching to cray-openshmemx/11.7.3.
+Switching to cray-pmi/6.1.15.
+Switching to craype/2.7.33.
+Switching to perftools-base/24.11.0.
+Running on  nodes with 512 tasks.
+Currently Loaded Modulefiles:
+  1) craype-x86-rome
+  2) libfabric/1.22.0
+  3) craype-network-ofi
+  4) perftools-base/24.11.0
+  5) xpmem/2.9.6-1.1_20240510205610__g087dc11fc19d
+  6) cce/18.0.1
+  7) craype/2.7.33
+  8) cray-dsmml/0.3.0
+  9) cray-mpich/8.1.31
+ 10) cray-libsci/24.11.0
+ 11) PrgEnv-cray/8.6.0
+ 12) cray-hdf5-parallel/1.14.3.3
+ 13) cray-pmi/6.1.15
+ 14) cray-openshmemx/11.7.3
+ 15) cray-netcdf-hdf5parallel/4.9.0.15
+ 16) cpe/24.11
+rm: cannot remove '/tmp/benchmark_random': No such file or directory
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.0 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.0 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.0 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.0 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.0 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.0 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.0 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.0 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s2b0n0, 64 tasks started
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+srun: Node x1000c0s3b0n0, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.0 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-332,334-383: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.0 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-456,458-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.0 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-133,135-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.0 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-265,267-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.0 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-396,398-447: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.0 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 65-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.0 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-206,208-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.0 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-13,15-63: Completed
+srun: Received task exit notification for 1 task of StepId=746497.0 (status=0x0000).
+srun: x1000c0s2b0n0: task 14: Completed
+srun: Received task exit notification for 1 task of StepId=746497.0 (status=0x0000).
+srun: x1000c0s2b0n1: task 64: Completed
+srun: Received task exit notification for 1 task of StepId=746497.0 (status=0x0000).
+srun: x1000c0s3b1n1: task 457: Completed
+srun: Received task exit notification for 1 task of StepId=746497.0 (status=0x0000).
+srun: x1000c0s2b1n1: task 207: Completed
+srun: Received task exit notification for 1 task of StepId=746497.0 (status=0x0000).
+srun: x1000c0s2b1n0: task 134: Completed
+srun: Received task exit notification for 1 task of StepId=746497.0 (status=0x0000).
+srun: x1000c0s3b0n1: task 333: Completed
+srun: Received task exit notification for 1 task of StepId=746497.0 (status=0x0000).
+srun: x1000c0s3b0n0: task 266: Completed
+srun: Received task exit notification for 1 task of StepId=746497.0 (status=0x0000).
+srun: x1000c0s3b1n0: task 397: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.3 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.3 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.3 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.3 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.3 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.3 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.3 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.3 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s3b0n1, 64 tasks started
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.3 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-43,45-63: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.3 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-290,292-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.3 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-428,430-447: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.3 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-489,491-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.3 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-234,236-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.3 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-107,109-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.3 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-171,173-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.3 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-364,366-383: Completed
+srun: Received task exit notification for 1 task of StepId=746497.3 (status=0x0000).
+srun: x1000c0s3b0n0: task 291: Completed
+srun: Received task exit notification for 1 task of StepId=746497.3 (status=0x0000).
+srun: x1000c0s2b1n1: task 235: Completed
+srun: Received task exit notification for 1 task of StepId=746497.3 (status=0x0000).
+srun: x1000c0s3b0n1: task 365: Completed
+srun: Received task exit notification for 1 task of StepId=746497.3 (status=0x0000).
+srun: x1000c0s3b1n0: task 429: Completed
+srun: Received task exit notification for 1 task of StepId=746497.3 (status=0x0000).
+srun: x1000c0s2b0n0: task 44: Completed
+srun: Received task exit notification for 1 task of StepId=746497.3 (status=0x0000).
+srun: x1000c0s2b1n0: task 172: Completed
+srun: Received task exit notification for 1 task of StepId=746497.3 (status=0x0000).
+srun: x1000c0s2b0n1: task 108: Completed
+srun: Received task exit notification for 1 task of StepId=746497.3 (status=0x0000).
+srun: x1000c0s3b1n1: task 490: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.6 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.6 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.6 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.6 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.6 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.6 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.6 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.6 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.6 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-436,438-447: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.6 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-339,341-383: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.6 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-462,464-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.6 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-167,169-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.6 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-212,214-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.6 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-276,278-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.6 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-43,45-63: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.6 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-103,105-127: Completed
+srun: Received task exit notification for 1 task of StepId=746497.6 (status=0x0000).
+srun: x1000c0s3b1n0: task 437: Completed
+srun: Received task exit notification for 1 task of StepId=746497.6 (status=0x0000).
+srun: x1000c0s2b1n1: task 213: Completed
+srun: Received task exit notification for 1 task of StepId=746497.6 (status=0x0000).
+srun: x1000c0s3b0n0: task 277: Completed
+srun: Received task exit notification for 1 task of StepId=746497.6 (status=0x0000).
+srun: x1000c0s3b1n1: task 463: Completed
+srun: Received task exit notification for 1 task of StepId=746497.6 (status=0x0000).
+srun: x1000c0s2b0n0: task 44: Completed
+srun: Received task exit notification for 1 task of StepId=746497.6 (status=0x0000).
+srun: x1000c0s3b0n1: task 340: Completed
+srun: Received task exit notification for 1 task of StepId=746497.6 (status=0x0000).
+srun: x1000c0s2b1n0: task 168: Completed
+srun: Received task exit notification for 1 task of StepId=746497.6 (status=0x0000).
+srun: x1000c0s2b0n1: task 104: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.9 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.9 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.9 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.9 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.9 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.9 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.9 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.9 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.9 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-488,490-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.9 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-396,398-447: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.9 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-77,79-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.9 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-294,296-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.9 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-164,166-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.9 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-221,223-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.9 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-27,29-63: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.9 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-336,338-383: Completed
+srun: Received task exit notification for 1 task of StepId=746497.9 (status=0x0000).
+srun: x1000c0s3b1n1: task 489: Completed
+srun: Received task exit notification for 1 task of StepId=746497.9 (status=0x0000).
+srun: x1000c0s3b0n0: task 295: Completed
+srun: Received task exit notification for 1 task of StepId=746497.9 (status=0x0000).
+srun: x1000c0s2b1n0: task 165: Completed
+srun: Received task exit notification for 1 task of StepId=746497.9 (status=0x0000).
+srun: x1000c0s2b0n0: task 28: Completed
+srun: Received task exit notification for 1 task of StepId=746497.9 (status=0x0000).
+srun: x1000c0s3b1n0: task 397: Completed
+srun: Received task exit notification for 1 task of StepId=746497.9 (status=0x0000).
+srun: x1000c0s2b0n1: task 78: Completed
+srun: Received task exit notification for 1 task of StepId=746497.9 (status=0x0000).
+srun: x1000c0s2b1n1: task 222: Completed
+srun: Received task exit notification for 1 task of StepId=746497.9 (status=0x0000).
+srun: x1000c0s3b0n1: task 337: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.12 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.12 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.12 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.12 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.12 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.12 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.12 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.12 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.12 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-271,273-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.12 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-460,462-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.12 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-148,150-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.12 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-350,352-383: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.12 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-243,245-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.12 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-414,416-447: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.12 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-110,112-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.12 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-26,28-63: Completed
+srun: Received task exit notification for 1 task of StepId=746497.12 (status=0x0000).
+srun: x1000c0s2b1n0: task 149: Completed
+srun: Received task exit notification for 1 task of StepId=746497.12 (status=0x0000).
+srun: x1000c0s2b0n0: task 27: Completed
+srun: Received task exit notification for 1 task of StepId=746497.12 (status=0x0000).
+srun: x1000c0s2b1n1: task 244: Completed
+srun: Received task exit notification for 1 task of StepId=746497.12 (status=0x0000).
+srun: x1000c0s3b0n0: task 272: Completed
+srun: Received task exit notification for 1 task of StepId=746497.12 (status=0x0000).
+srun: x1000c0s3b1n1: task 461: Completed
+srun: Received task exit notification for 1 task of StepId=746497.12 (status=0x0000).
+srun: x1000c0s3b0n1: task 351: Completed
+srun: Received task exit notification for 1 task of StepId=746497.12 (status=0x0000).
+srun: x1000c0s3b1n0: task 415: Completed
+srun: Received task exit notification for 1 task of StepId=746497.12 (status=0x0000).
+srun: x1000c0s2b0n1: task 111: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.15 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.15 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.15 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.15 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.15 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.15 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.15 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.15 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.15 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-345,347-383: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.15 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-277,279-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.15 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-171,173-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.15 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-28,30-63: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.15 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-213,215-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.15 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-487,489-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.15 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-399,401-447: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.15 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-109,111-127: Completed
+srun: Received task exit notification for 1 task of StepId=746497.15 (status=0x0000).
+srun: x1000c0s2b0n0: task 29: Completed
+srun: Received task exit notification for 1 task of StepId=746497.15 (status=0x0000).
+srun: x1000c0s2b1n0: task 172: Completed
+srun: Received task exit notification for 1 task of StepId=746497.15 (status=0x0000).
+srun: x1000c0s3b0n0: task 278: Completed
+srun: Received task exit notification for 1 task of StepId=746497.15 (status=0x0000).
+srun: x1000c0s3b1n0: task 400: Completed
+srun: Received task exit notification for 1 task of StepId=746497.15 (status=0x0000).
+srun: x1000c0s2b1n1: task 214: Completed
+srun: Received task exit notification for 1 task of StepId=746497.15 (status=0x0000).
+srun: x1000c0s2b0n1: task 110: Completed
+srun: Received task exit notification for 1 task of StepId=746497.15 (status=0x0000).
+srun: x1000c0s3b1n1: task 488: Completed
+srun: Received task exit notification for 1 task of StepId=746497.15 (status=0x0000).
+srun: x1000c0s3b0n1: task 346: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.18 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.18 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.18 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.18 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.18 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.18 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.18 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.18 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.18 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-275,277-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.18 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-196,198-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.18 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-342,344-383: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.18 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-44,46-63: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.18 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-103,105-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.18 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-424,426-447: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.18 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-485,487-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.18 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-184,186-191: Completed
+srun: Received task exit notification for 1 task of StepId=746497.18 (status=0x0000).
+srun: x1000c0s2b1n0: task 185: Completed
+srun: Received task exit notification for 1 task of StepId=746497.18 (status=0x0000).
+srun: x1000c0s2b1n1: task 197: Completed
+srun: Received task exit notification for 1 task of StepId=746497.18 (status=0x0000).
+srun: x1000c0s3b1n1: task 486: Completed
+srun: Received task exit notification for 1 task of StepId=746497.18 (status=0x0000).
+srun: x1000c0s2b0n0: task 45: Completed
+srun: Received task exit notification for 1 task of StepId=746497.18 (status=0x0000).
+srun: x1000c0s3b0n0: task 276: Completed
+srun: Received task exit notification for 1 task of StepId=746497.18 (status=0x0000).
+srun: x1000c0s3b0n1: task 343: Completed
+srun: Received task exit notification for 1 task of StepId=746497.18 (status=0x0000).
+srun: x1000c0s3b1n0: task 425: Completed
+srun: Received task exit notification for 1 task of StepId=746497.18 (status=0x0000).
+srun: x1000c0s2b0n1: task 104: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.21 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.21 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.21 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.21 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.21 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.21 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.21 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.21 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.21 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-296,298-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.21 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-346,348-383: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.21 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-155,157-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.21 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-493,495-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.21 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-78,80-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.21 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-206,208-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.21 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-42,44-63: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.21 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-427,429-447: Completed
+srun: Received task exit notification for 1 task of StepId=746497.21 (status=0x0000).
+srun: x1000c0s2b1n0: task 156: Completed
+srun: Received task exit notification for 1 task of StepId=746497.21 (status=0x0000).
+srun: x1000c0s3b1n0: task 428: Completed
+srun: Received task exit notification for 1 task of StepId=746497.21 (status=0x0000).
+srun: x1000c0s2b1n1: task 207: Completed
+srun: Received task exit notification for 1 task of StepId=746497.21 (status=0x0000).
+srun: x1000c0s3b0n0: task 297: Completed
+srun: Received task exit notification for 1 task of StepId=746497.21 (status=0x0000).
+srun: x1000c0s2b0n0: task 43: Completed
+srun: Received task exit notification for 1 task of StepId=746497.21 (status=0x0000).
+srun: x1000c0s3b0n1: task 347: Completed
+srun: Received task exit notification for 1 task of StepId=746497.21 (status=0x0000).
+srun: x1000c0s3b1n1: task 494: Completed
+srun: Received task exit notification for 1 task of StepId=746497.21 (status=0x0000).
+srun: x1000c0s2b0n1: task 79: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.24 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.24 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.24 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.24 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.24 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.24 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.24 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.24 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.24 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-44,46-63: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.24 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-365,367-383: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.24 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-69,71-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.24 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-147,149-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.24 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-206,208-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.24 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 448-492,494-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.24 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-297,299-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.24 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-434,436-447: Completed
+srun: Received task exit notification for 1 task of StepId=746497.24 (status=0x0000).
+srun: x1000c0s2b0n0: task 45: Completed
+srun: Received task exit notification for 1 task of StepId=746497.24 (status=0x0000).
+srun: x1000c0s2b1n1: task 207: Completed
+srun: Received task exit notification for 1 task of StepId=746497.24 (status=0x0000).
+srun: x1000c0s2b1n0: task 148: Completed
+srun: Received task exit notification for 1 task of StepId=746497.24 (status=0x0000).
+srun: x1000c0s3b0n0: task 298: Completed
+srun: Received task exit notification for 1 task of StepId=746497.24 (status=0x0000).
+srun: x1000c0s3b1n0: task 435: Completed
+srun: Received task exit notification for 1 task of StepId=746497.24 (status=0x0000).
+srun: x1000c0s3b1n1: task 493: Completed
+srun: Received task exit notification for 1 task of StepId=746497.24 (status=0x0000).
+srun: x1000c0s3b0n1: task 366: Completed
+srun: Received task exit notification for 1 task of StepId=746497.24 (status=0x0000).
+srun: x1000c0s2b0n1: task 70: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 746497
+srun: job-name            : hotlum-cray-random
+srun: mem                 : 446G
+srun: mpi                 : cray_shasta
+srun: nodes               : 8
+srun: ntasks              : 512
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 746497: nodes(8):`x1000c0s2b0n[0-1],x1000c0s2b1n[0-1],x1000c0s3b0n[0-1],x1000c0s3b1n[0-1]', cpu counts: 256(x8)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=746497.27 on host x1000c0s2b0n0, 64 tasks: [0-63]
+srun: launching StepId=746497.27 on host x1000c0s2b0n1, 64 tasks: [64-127]
+srun: launching StepId=746497.27 on host x1000c0s2b1n0, 64 tasks: [128-191]
+srun: launching StepId=746497.27 on host x1000c0s2b1n1, 64 tasks: [192-255]
+srun: launching StepId=746497.27 on host x1000c0s3b0n0, 64 tasks: [256-319]
+srun: launching StepId=746497.27 on host x1000c0s3b0n1, 64 tasks: [320-383]
+srun: launching StepId=746497.27 on host x1000c0s3b1n0, 64 tasks: [384-447]
+srun: launching StepId=746497.27 on host x1000c0s3b1n1, 64 tasks: [448-511]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1000c0s3b1n0, 64 tasks started
+srun: Node x1000c0s2b0n1, 64 tasks started
+srun: Node x1000c0s2b1n0, 64 tasks started
+srun: Node x1000c0s3b1n1, 64 tasks started
+srun: Node x1000c0s2b1n1, 64 tasks started
+srun: Node x1000c0s3b0n0, 64 tasks started
+srun: Node x1000c0s3b0n1, 64 tasks started
+srun: Node x1000c0s2b0n0, 64 tasks started
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: hotlum-cray-shmem-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+srun: Received task exit notification for 63 tasks of StepId=746497.27 (status=0x0000).
+srun: x1000c0s2b1n1: tasks 192-246,248-255: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.27 (status=0x0000).
+srun: x1000c0s3b1n1: tasks 449-511: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.27 (status=0x0000).
+srun: x1000c0s2b1n0: tasks 128-171,173-191: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.27 (status=0x0000).
+srun: x1000c0s3b0n1: tasks 320-343,345-383: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.27 (status=0x0000).
+srun: x1000c0s3b0n0: tasks 256-288,290-319: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.27 (status=0x0000).
+srun: x1000c0s2b0n1: tasks 64-74,76-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.27 (status=0x0000).
+srun: x1000c0s3b1n0: tasks 384-411,413-447: Completed
+srun: Received task exit notification for 63 tasks of StepId=746497.27 (status=0x0000).
+srun: x1000c0s2b0n0: tasks 0-23,25-63: Completed
+srun: Received task exit notification for 1 task of StepId=746497.27 (status=0x0000).
+srun: x1000c0s3b1n1: task 448: Completed
+srun: Received task exit notification for 1 task of StepId=746497.27 (status=0x0000).
+srun: x1000c0s3b1n0: task 412: Completed
+srun: Received task exit notification for 1 task of StepId=746497.27 (status=0x0000).
+srun: x1000c0s2b1n0: task 172: Completed
+srun: Received task exit notification for 1 task of StepId=746497.27 (status=0x0000).
+srun: x1000c0s2b1n1: task 247: Completed
+srun: Received task exit notification for 1 task of StepId=746497.27 (status=0x0000).
+srun: x1000c0s3b0n0: task 289: Completed
+srun: Received task exit notification for 1 task of StepId=746497.27 (status=0x0000).
+srun: x1000c0s2b0n0: task 24: Completed
+srun: Received task exit notification for 1 task of StepId=746497.27 (status=0x0000).
+srun: x1000c0s2b0n1: task 75: Completed
+srun: Received task exit notification for 1 task of StepId=746497.27 (status=0x0000).
+srun: x1000c0s3b0n1: task 344: Completed
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: hotlum-cray-p2p-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
+ nx 512
+ ny 512
+ nz 32
+ lx 160.
+ ly 160.
+ lz 10.
+ niter 10
+ nppc 20
+ min_vratio 20.
+ size_factor 1.25
+ fraction of small parcels (%) 50.
+ shuffle parcels T
+ seed 42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: hotlum-cray-rma-random-nx-512-ny-512-nz-32-nodes-8
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9942%
+ Number of parcels after merging:   105880678
+ Fraction of merged parcels:                    36.8902%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0008%
+ Number of parcels after merging:   105869291
+ Fraction of merged parcels:                    36.8970%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0003%
+ Number of parcels after merging:   105868296
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0065%
+ Number of parcels after merging:   105866347
+ Fraction of merged parcels:                    36.8987%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0057%
+ Number of parcels after merging:   105860582
+ Fraction of merged parcels:                    36.9022%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0010%
+ Number of parcels after merging:   105870786
+ Fraction of merged parcels:                    36.8961%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0009%
+ Number of parcels after merging:   105865867
+ Fraction of merged parcels:                    36.8990%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0035%
+ Number of parcels after merging:   105866562
+ Fraction of merged parcels:                    36.8986%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     49.9965%
+ Number of parcels after merging:   105873905
+ Fraction of merged parcels:                    36.8942%
+ Number of parcels before merging:  167772160
+ Fraction of small parcels:                     50.0019%
+ Number of parcels after merging:   105870804
+ Fraction of merged parcels:                    36.8961%
+ Number of MPI ranks:         512
+ Total number of merges:      619028482
+ Number of close big parcels: 349741458
+ Number of 2-way mergers:     427993434
+ Number of 3-way mergers:     85690766
+ Number of 4-way mergers:     6282842
+ Number of 5-way mergers:     198391
+ Number of 6-way mergers:     2278
+ Number of 7-way mergers:     6
+ Number of 8-way mergers:     0
