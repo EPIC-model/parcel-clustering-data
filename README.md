@@ -26,3 +26,21 @@ bash run_read.sh -m archer2 -l 4096 -j 2 -u 4096 -r 10 -i 10 -b /work/e710/e710/
 bash run_read.sh -m archer2 -l 8192 -j 2 -u 8192 -r 10 -i 10 -b /work/e710/e710/mf248/parcel-clustering/scripts/rayleigh_taylor/rt-256x256x256/late-time/epic_rt_256x256x256_late -o 1 -n 10 -s -f 3.0 -t 01:00:00
 bash run_read.sh -m archer2 -l 16384 -j 2 -u 16384 -r 10 -i 10 -b /work/e710/e710/mf248/parcel-clustering/scripts/rayleigh_taylor/rt-256x256x256/late-time/epic_rt_256x256x256_late -o 1 -n 10 -s -f 4.0 -t 01:30:00
 ```
+
+### Hotlum
+```
+bash run_read.sh -m hotlum -l 64 -j 2 -u 512 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-64x64x64/early-time/epic_rt_64x64x64_early -o 1 -n 10 -s -f 1.5
+bash run_read.sh -m hotlum -l 128 -j 2 -u 2048 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-128x128x128/early-time/epic_rt_128x128x128_early -o 1 -n 10 -s -f 1.5 
+bash run_read.sh -m hotlum -l 512 -j 2 -u 1024 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-256x256x256/early-time/epic_rt_256x256x256_early -o 1 -n 10 -s -f 1.5 
+bash run_read.sh -m hotlum -l 2048 -j 2 -u 2048 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-256x256x256/early-time/epic_rt_256x256x256_early -o 1 -n 10 -s -f 2.0
+bash run_read.sh -m hotlum -l 4096 -j 2 -u 4096 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-256x256x256/early-time/epic_rt_256x256x256_early -o 1 -n 10 -s -f 3.0 
+bash run_read.sh -m hotlum -l 8192 -j 2 -u 8192 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-256x256x256/early-time/epic_rt_256x256x256_early -o 1 -n 10 -s -f 4.0
+
+
+bash run_read.sh -m hotlum -l 64 -j 2 -u 512 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-64x64x64/late-time/epic_rt_64x64x64_late -o 1 -n 10 -s -f 1.5
+bash run_read.sh -m hotlum -l 128 -j 2 -u 2048 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-128x128x128/late-time/epic_rt_128x128x128_late -o 1 -n 10 -s -f 1.5 
+bash run_read.sh -m hotlum -l 512 -j 2 -u 1024 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-256x256x256/late-time/epic_rt_256x256x256_late -o 1 -n 10 -s -f 1.5
+bash run_read.sh -m hotlum -l 2048 -j 2 -u 2048 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-256x256x256/late-time/epic_rt_256x256x256_late -o 1 -n 10 -s -f 2.0
+bash run_read.sh -m hotlum -l 4096 -j 2 -u 4096 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-256x256x256/late-time/epic_rt_256x256x256_late -o 1 -n 10 -s -f 3.0 
+bash run_read.sh -m hotlum -l 8192 -j 2 -u 8192 -r 5 -i 100 -b /lus/bnchlu1/shanks/EPIC/data/rt-256x256x256/late-time/epic_rt_256x256x256_late -o 1 -n 10 -s -f 4.0
+```
