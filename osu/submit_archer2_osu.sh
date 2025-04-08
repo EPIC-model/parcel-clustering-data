@@ -45,6 +45,7 @@ module list
 install_dir=INSTALL_DIR/libexec/osu-micro-benchmarks
 
 for nodes in 1 2; do
+    # SHMEM
     for exe in  osu_oshm_put \
                 osu_oshm_get \
                 osu_oshm_barrier \
@@ -58,15 +59,24 @@ for nodes in 1 2; do
              --distribution=block:block \
              ${install_dir}/openshmem/$exe
     done
-    for exe in  "osu_get_latency -w allocate -s lock" \
-                "osu_get_latency -w allocate -s flush" \
-                "osu_put_latency -w allocate -s lock" \
-                "osu_put_latency -w allocate -s flush"  \
-                "osu_get_bw -w allocate -s lock" \
-                "osu_get_bw -w allocate -s flush" \
-                "osu_put_bw -w allocate -s lock" \
-                "osu_put_bw -w allocate -s flush" \
-                osu_latency \
+    # MPI-3 RMA
+    for exe in  osu_get_latency \
+                osu_put_latency \
+                osu_get_bw \
+                osu_put_bw; do
+
+        for syn in lock flush; do
+            echo "Run $exe with $syn synchronisation benchmark using $nodes and NTASKS tasks:"
+            srun --nodes=$nodes \
+                 --ntasks=NTASKS \
+                 --unbuffered \
+                 --distribution=block:block \
+                 --hint=nomultithread \
+                 ${install_dir}/mpi/one-sided/$exe -w allocate -s $syn
+        done
+    done
+    # MPI-3 P2P
+    for exe in  osu_latency \
                 osu_bw \
                 osu_allreduce; do
 
@@ -76,7 +86,7 @@ for nodes in 1 2; do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-            ${install_dir}/mpi/$exe
+             ${install_dir}/mpi/pt2pt/$exe
     done
 done
 
