@@ -1,6 +1,13 @@
 # Performance and scalability benchmarks of the parcel clustering algorithm
 
 ## Random benchmark
+### Cirrus
+```bash
+bash run_random.sh -m cirrus -l 36 -j 2 -u 288 -r 10 -i 10 -f 0.5 -x 72 -y 144 -z 32 -a 22.5 -b 45.0 -c 10.0
+bash run_random.sh -m cirrus -l 72 -j 2 -u 1152 -r 10 -i 10 -f 0.5 -x 288 -y 288 -z 32 -a 90.0 -b 90.0 -c 10.0
+bash run_random.sh -m cirrus -l 288 -j 2 -u 4608 -r 10 -i 10 -f 0.5 -x 576 -y 576 -z 32 -a 180.0 -b 180.0 -c 10.0
+```
+
 ### ARCHER2
 ```
 bash run_random.sh -m archer2 -l 128 -j 2 -u 1024 -r 10 -i 10 -f 0.5 -x 256 -y 512 -z 32 -a 80.0 -b 160.0 -c 10.0
