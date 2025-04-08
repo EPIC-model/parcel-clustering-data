@@ -5,11 +5,13 @@ run_jobs() {
     local machine=${1}
     local fname="submit_${machine}_osu.sh"
 
-    local prefix=${2}
+    local ntasks=${2}
+    local prefix=${3}
 
     echo "--------------------------------"
     echo "Run jobs with following options:"
     echo "machine               = $machine"
+    echo "ntasks                = $ntasks"
     echo "install_dir           = $prefix"
     echo "--------------------------------"
 
@@ -30,11 +32,12 @@ run_jobs() {
 }
 
 print_help() {
-    echo "Script to submit OSU Micro Benchmarks"
+    echo "Script to submit OSU Micro Benchmarks on 2 computing nodes."
     echo "Arguments:"
     echo "    -m    machine to run on, e.g. 'cirrus', 'archer2', 'hotlum'"
     echo "          (requirement: <machine>.sh and 'submit_<machine>_osu.sh)"
     echo "    -i    install directory of OSU Micro Benchmarks"
+    echo "    -n    number of total tasks"
     echo "    -h    print this help message"
 }
 
@@ -49,6 +52,9 @@ while getopts "h?m:i:" option; do
         i)
             install_dir=$OPTARG
             ;;
+        n)
+            num_tasks=$OPTARG
+            ;;
     	m)
             machine=$OPTARG
       	    ;;
@@ -60,4 +66,4 @@ if ! test -f "submit_${machine}_osu.sh" ; then
     exit 1
 fi
 
-run_jobs $machine "$install_dir"
+run_jobs $machine $num_tasks "$install_dir"
