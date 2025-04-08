@@ -24,9 +24,21 @@ sed -i -e 's/upc_compiler=true/upc_compiler=false/g' ${SRC_DIR}/$OMB/$OMB-$OMB_V
 
 # configure
 mkdir -p "${SRC_DIR}/$OMB/build" && cd "$_"
-${SRC_DIR}/$OMB/$OMB-$OMB_VERSION/configure   \
-    CXX=CC CC=cc FC=ftn \
-    --prefix=${PREFIX}
+
+if test "$(which cc > /dev/null 2>&1)" && \
+   test "$(which CC > /dev/null 2>&1)" && \
+   test "$(which ftn > /dev/null 2>&1)"; then
+    
+    ${SRC_DIR}/$OMB/$OMB-$OMB_VERSION/configure   \
+        CXX=CC CC=cc FC=ftn \
+        --prefix=${PREFIX}
+else
+    echo "Did not find CC, cc and ftn wrappers. Using mpic++, mpicc and mpifort."
+    ${SRC_DIR}/$OMB/$OMB-$OMB_VERSION/configure   \
+	CXX=mpic++ CC=mpicc FC=mpifort \
+	LDFLAGS=$LDFLAGS \
+	--prefix=${PREFIX}
+fi
 
 # compile & install
 make -j ${NJOBS}
