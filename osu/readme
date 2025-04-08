@@ -1,0 +1,25 @@
+Running OSU - Micro Benchmarks on ARCHER2, hotlum and Cirrus
+============================================================
+
+How to install:
+---------------
+Set the following environment variables:
+* NJOBS         - how many cores to use with make
+* DOWNLOADS_DIR - where to download the tar file
+* SRC_DIR       - where to unpack the tar file
+* PREFIX        - install directory
+* CC            - C++ compiler wrapper
+* ftn           - Fortran compiler wrapper
+* cc            - C compiler wrapper
+
+Run the script with
+> bash omb_install.sh
+
+How to run:
+-----------
+
+bash run_osu.sh -m <machine> -i $PREFIX
+
+where <machine> is either archer2, hotlum or cirrus and $PREFIX is the install
+directory of the benchmarks set during the installation step.
+
