@@ -15,8 +15,8 @@ run_jobs() {
     echo "install_dir           = $prefix"
     echo "--------------------------------"
 
-    mkdir -p -v "osu-runs"
-    cd "osu-runs"
+    mkdir -p -v "$machine-osu-runs"
+    cd "$machine-osu-runs"
     fn="submit_${machine}_osu.sh"
 
     cp "../$fname" $fn
