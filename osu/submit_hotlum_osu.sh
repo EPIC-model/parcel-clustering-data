@@ -46,7 +46,7 @@ for nodes in 1 2; do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             ${install_dir}/openshmem/$exe
+             ${install_dir}/openshmem/$exe heap
     done
     for exe in osu_oshm_barrier; do
 

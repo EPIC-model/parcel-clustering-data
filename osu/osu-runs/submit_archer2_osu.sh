@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=JOBNAME
+#SBATCH --job-name=archer2-osu
 #SBATCH --output=%x.o%j
 #SBATCH --time=00:30:00
 #SBATCH --nodes=2
@@ -42,7 +42,7 @@ export SLURM_CPU_FREQ_REQ=2000000
 
 module list
 
-install_dir=INSTALL_DIR/libexec/osu-micro-benchmarks
+install_dir=/work/e710/e710/mf248/parcel-clustering-data/osu/install/libexec/osu-micro-benchmarks
 
 for nodes in 1 2; do
     # SHMEM
@@ -60,9 +60,9 @@ for nodes in 1 2; do
     done
 
     for exe in osu_oshm_barrier; do
-        echo "Run $exe benchmark using $nodes nodes and NTASKS tasks:"
+        echo "Run $exe benchmark using $nodes nodes and 128 tasks:"
         srun --nodes=$nodes \
-             --ntasks=NTASKS \
+             --ntasks=128 \
              --unbuffered \
              --distribution=block:block \
              ${install_dir}/openshmem/$exe
@@ -97,9 +97,9 @@ for nodes in 1 2; do
     done
 
     for exe in osu_allreduce; do
-        echo "Run $exe benchmark using $nodes nodes and NTASKS tasks:"
+        echo "Run $exe benchmark using $nodes nodes and 128 tasks:"
         srun --nodes=$nodes \
-             --ntasks=NTASKS \
+             --ntasks=128 \
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
