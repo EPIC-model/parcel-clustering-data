@@ -55,7 +55,7 @@ for nodes in 1 2; do
              --ntasks=2 \
              --unbuffered \
              --distribution=block:block \
-             --output "MACHINE-$exe" \
+             --output "MACHINE-nodes-$nodes-$exe" \
              ${install_dir}/openshmem/$exe heap
     done
 
@@ -65,7 +65,7 @@ for nodes in 1 2; do
              --ntasks=NTASKS \
              --unbuffered \
              --distribution=block:block \
-             --output "MACHINE-$exe" \
+             --output "MACHINE-nodes-$nodes-$exe" \
              ${install_dir}/openshmem/$exe
     done
     # MPI-3 RMA
@@ -81,7 +81,7 @@ for nodes in 1 2; do
                  --unbuffered \
                  --distribution=block:block \
                  --hint=nomultithread \
-                 --output "MACHINE-$exe" \
+                 --output "MACHINE-nodes-$nodes-$exe" \
                  ${install_dir}/mpi/one-sided/$exe -w allocate -s $syn
         done
     done
@@ -95,7 +95,7 @@ for nodes in 1 2; do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             --output "MACHINE-$exe" \
+             --output "MACHINE-nodes-$nodes-$exe" \
              ${install_dir}/mpi/pt2pt/$exe
     done
 
@@ -106,7 +106,7 @@ for nodes in 1 2; do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             --output "MACHINE-$exe" \
+             --output "MACHINE-nodes-$nodes-$exe" \
              ${install_dir}/mpi/collective/$exe
     done
 done
