@@ -20,7 +20,7 @@ tar xvf "${DOWNLOADS_DIR}/$OMB-$OMB_VERSION.tar.gz"
 
 
 # disable UPC
-sed -i -e 's/upc_compiler=true/upc_compiler=false/g' c${SRC_DIR}/$OMB/$OMB-$OMB_VERSION/configure
+sed -i -e 's/upc_compiler=true/upc_compiler=false/g' ${SRC_DIR}/$OMB/$OMB-$OMB_VERSION/configure
 
 # configure
 mkdir -p "${SRC_DIR}/$OMB/build" && cd "$_"
