@@ -2,7 +2,6 @@
 #SBATCH --job-name=JOBNAME
 #SBATCH --time=00:15:00
 #SBATCH --nodes=2
-#SBATCH --ntasks-per-node=64
 #SBATCH --cpus-per-task=1
 #SBATCH --exclusive
 # Set the number of threads to 1
