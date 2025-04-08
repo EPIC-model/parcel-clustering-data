@@ -35,8 +35,8 @@ export LD_LIBRARY_PATH=$CRAY_LD_LIBRARY_PATH:$LD_LIBRARY_PATH
 
 echo "Setting SHMEM symmetric size"
 export SHMEM_SYMMETRIC_SIZE=1G
-export SHMEM_VERSION_DISPLAY=0
-export SHMEM_ENV_DISPLAY=0
+# export SHMEM_VERSION_DISPLAY=0
+# export SHMEM_ENV_DISPLAY=0
 
 export SLURM_CPU_FREQ_REQ=2000000
 
@@ -46,13 +46,21 @@ install_dir=INSTALL_DIR/libexec/osu-micro-benchmarks
 
 for nodes in 1 2; do
     # SHMEM
-    for exe in  osu_oshm_put \
-                osu_oshm_get \
-                osu_oshm_barrier \
-                osu_oshm_put_bw \
-                osu_oshm_get_bw; do
+    for exe in osu_oshm_put \
+               osu_oshm_get \
+               osu_oshm_put_bw \
+               osu_oshm_get_bw; do
 
-        echo "Run $exe benchmark using $nodes and NTASKS tasks:"
+        echo "Run $exe benchmark using $nodes nodes and 2 tasks:"
+        srun --nodes=$nodes \
+             --ntasks=2 \
+             --unbuffered \
+             --distribution=block:block \
+             ${install_dir}/openshmem/$exe
+    done
+
+    for exe in osu_oshm_barrier; do
+        echo "Run $exe benchmark using $nodes nodes and NTASKS tasks:"
         srun --nodes=$nodes \
              --ntasks=NTASKS \
              --unbuffered \
@@ -60,15 +68,15 @@ for nodes in 1 2; do
              ${install_dir}/openshmem/$exe
     done
     # MPI-3 RMA
-    for exe in  osu_get_latency \
-                osu_put_latency \
-                osu_get_bw \
-                osu_put_bw; do
+    for exe in osu_get_latency \
+               osu_put_latency \
+               osu_get_bw \
+               osu_put_bw; do
 
         for syn in lock flush; do
-            echo "Run $exe with $syn synchronisation benchmark using $nodes and NTASKS tasks:"
+            echo "Run $exe with $syn synchronisation benchmark using $nodes nodes and 2 tasks:"
             srun --nodes=$nodes \
-                 --ntasks=NTASKS \
+                 --ntasks=2 \
                  --unbuffered \
                  --distribution=block:block \
                  --hint=nomultithread \
@@ -76,17 +84,26 @@ for nodes in 1 2; do
         done
     done
     # MPI-3 P2P
-    for exe in  osu_latency \
-                osu_bw \
-                osu_allreduce; do
+    for exe in osu_latency \
+               osu_bw; do
 
-        echo "Run $exe benchmark using $nodes and NTASKS tasks:"
+        echo "Run $exe benchmark using $nodes nodes and 2 tasks:"
+        srun --nodes=$nodes \
+             --ntasks=2 \
+             --unbuffered \
+             --distribution=block:block \
+             --hint=nomultithread \
+             ${install_dir}/mpi/pt2pt/$exe
+    done
+
+    for exe in osu_allreduce; do
+        echo "Run $exe benchmark using $nodes nodes and NTASKS tasks:"
         srun --nodes=$nodes \
              --ntasks=NTASKS \
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             ${install_dir}/mpi/pt2pt/$exe
+             ${install_dir}/mpi/collective/$exe
     done
 done
 
