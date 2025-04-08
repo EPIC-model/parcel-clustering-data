@@ -41,13 +41,12 @@ for nodes in 1 2; do
                 osu_oshm_get_bw; do
 
         echo "Run $exe benchmark using $nodes and NTASKS tasks:"
-        sbcast --compress=none ${install_dir}/openshmem/$exe /tmp/$exe
         srun -v --nodes=$nodes \
              --ntasks=NTASKS \
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             /tmp/$exe
+             ${install_dir}/openshmem/$exe
     done
     for exe in  "osu_get_latency -w allocate -s lock" \
                 "osu_get_latency -w allocate -s flush" \
@@ -62,12 +61,11 @@ for nodes in 1 2; do
                 osu_allreduce; do
 
         echo "Run $exe benchmark using $nodes and NTASKS tasks:"
-        sbcast --compress=none ${install_dir}/mpi/$exe /tmp/$exe
         srun --nodes=$nodes \
              --ntasks=NTASKS \
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-            /tmp/$exe
+            ${install_dir}/mpi/$exe
     done
 done
