@@ -1,0 +1,1131 @@
+Loading the Cray Compiling Environment (CCE)
+PrgEnv-cray/8.5.0(161):ERROR:150: Module 'PrgEnv-cray/8.5.0' conflicts with the currently loaded module(s) 'PrgEnv-cray/8.6.0'
+PrgEnv-cray/8.5.0(161):ERROR:102: Tcl command execution failed: conflict PrgEnv-cray
+
+cce/17.0.0(11):ERROR:150: Module 'cce/17.0.0' conflicts with the currently loaded module(s) 'cce/18.0.1'
+cce/17.0.0(11):ERROR:102: Tcl command execution failed: conflict cce
+
+cray-mpich/8.1.28(11):ERROR:150: Module 'cray-mpich/8.1.28' conflicts with the currently loaded module(s) 'cray-mpich/8.1.31'
+cray-mpich/8.1.28(11):ERROR:102: Tcl command execution failed: conflict cray-mpich
+
+cray-dsmml/0.2.2(7):ERROR:150: Module 'cray-dsmml/0.2.2' conflicts with the currently loaded module(s) 'cray-dsmml/0.3.0'
+cray-dsmml/0.2.2(7):ERROR:102: Tcl command execution failed: conflict cray-dsmml
+
+cray-openshmemx/11.7.0(8):ERROR:150: Module 'cray-openshmemx/11.7.0' conflicts with the currently loaded module(s) 'cray-openshmemx/11.7.3'
+cray-openshmemx/11.7.0(8):ERROR:102: Tcl command execution failed: conflict cray-openshmemx
+
+Switching to PrgEnv-cray/8.6.0.
+Switching to cce/18.0.1.
+Switching to cray-dsmml/0.3.0.
+Switching to cray-libsci/24.11.0.
+Switching to cray-mpich/8.1.31.
+Switching to cray-openshmemx/11.7.3.
+Switching to craype/2.7.33.
+Switching to perftools-base/24.11.0.
+Currently Loaded Modulefiles:
+  1) craype-x86-rome
+  2) libfabric/1.22.0
+  3) craype-network-ofi
+  4) perftools-base/24.11.0
+  5) xpmem/2.9.6-1.1_20240510205610__g087dc11fc19d
+  6) cce/18.0.1
+  7) craype/2.7.33
+  8) cray-dsmml/0.3.0
+  9) cray-mpich/8.1.31
+ 10) cray-libsci/24.11.0
+ 11) PrgEnv-cray/8.6.0
+ 12) cray-openshmemx/11.7.3
+ 13) cpe/24.11
+Run osu_oshm_put benchmark using 1 nodes and 2 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 1
+srun: ntasks              : 2
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.0 on host x1003c7s5b1n0, 2 tasks: [0-1]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 2 tasks started
+# OSU OpenSHMEM Put Test v7.5
+# Size          Latency (us)
+1                       0.02
+2                       0.02
+4                       0.02
+8                       0.02
+16                      0.02
+32                      0.02
+64                      0.02
+128                     0.02
+256                     0.02
+512                     0.02
+1024                    0.03
+2048                    0.03
+4096                    0.05
+8192                    0.08
+16384                   0.18
+32768                   0.61
+65536                   1.22
+131072                  2.42
+262144                  5.20
+524288                 18.07
+1048576                30.27
+srun: Received task exit notification for 2 tasks of StepId=852197.0 (status=0x0000).
+srun: x1003c7s5b1n0: tasks 0-1: Completed
+Run osu_oshm_get benchmark using 1 nodes and 2 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 1
+srun: ntasks              : 2
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.1 on host x1003c7s5b1n0, 2 tasks: [0-1]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 2 tasks started
+# OSU OpenSHMEM Get Test v7.5
+# Size          Latency (us)
+1                       0.02
+2                       0.02
+4                       0.02
+8                       0.01
+16                      0.02
+32                      0.02
+64                      0.02
+128                     0.02
+256                     0.02
+512                     0.02
+1024                    0.02
+2048                    0.03
+4096                    0.04
+8192                    0.08
+16384                   0.26
+32768                   0.69
+65536                   1.28
+131072                  2.49
+262144                  5.31
+524288                 18.77
+1048576                30.07
+srun: Received task exit notification for 2 tasks of StepId=852197.1 (status=0x0000).
+srun: x1003c7s5b1n0: tasks 0-1: Completed
+Run osu_oshm_put_bw benchmark using 1 nodes and 2 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 1
+srun: ntasks              : 2
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.2 on host x1003c7s5b1n0, 2 tasks: [0-1]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 2 tasks started
+# OSU OpenSHMEM Put Bandwidth Test v7.5
+# Size      Bandwidth (MB/s)
+1                      47.62
+2                     125.79
+4                     270.27
+8                     559.44
+16                   1081.08
+32                   1797.75
+64                   3809.52
+128                  8152.87
+256                 14463.28
+512                 27675.68
+1024                49951.22
+2048                75571.96
+4096                91838.57
+8192                98580.02
+16384               63015.38
+32768               46152.11
+65536               50803.10
+131072              52428.80
+262144              49554.63
+524288              30624.30
+1048576             43240.25
+srun: Received task exit notification for 2 tasks of StepId=852197.2 (status=0x0000).
+srun: x1003c7s5b1n0: tasks 0-1: Completed
+Run osu_oshm_get_bw benchmark using 1 nodes and 2 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 1
+srun: ntasks              : 2
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.3 on host x1003c7s5b1n0, 2 tasks: [0-1]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 2 tasks started
+# OSU OpenSHMEM Get Bandwidth Test v7.5
+# Size      Bandwidth (MB/s)
+1                      44.05
+2                     121.95
+4                     263.16
+8                     551.72
+16                   1019.11
+32                   1702.13
+64                   3575.42
+128                  7757.58
+256                 12929.29
+512                 28603.35
+1024                49230.77
+2048                73142.86
+4096                91633.11
+8192                99902.44
+16384               63015.38
+32768               47489.86
+65536               51200.00
+131072              52639.36
+262144              49367.98
+524288              28838.72
+1048576             42060.81
+srun: Received task exit notification for 2 tasks of StepId=852197.3 (status=0x0000).
+srun: x1003c7s5b1n0: tasks 0-1: Completed
+Run osu_oshm_barrier benchmark using 1 nodes and 128 tasks:
+srun: warning: can't honor --ntasks-per-node set to 64 which doesn't match the requested tasks 128 with the number of requested nodes 1. Ignoring --ntasks-per-node.
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 1
+srun: ntasks              : 128
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.4 on host x1003c7s5b1n0, 128 tasks: [0-127]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 128 tasks started
+# OSU OpenSHMEM Barrier Latency Test v7.5
+# Avg Latency(us)
+             2.72
+srun: Received task exit notification for 127 tasks of StepId=852197.4 (status=0x0000).
+srun: x1003c7s5b1n0: tasks 0-96,98-127: Completed
+srun: Received task exit notification for 1 task of StepId=852197.4 (status=0x0000).
+srun: x1003c7s5b1n0: task 97: Completed
+Run osu_get_latency with lock synchronisation benchmark using 1 and 2 tasks:
+# OSU MPI_Get latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                       0.78
+2                       0.83
+4                       0.81
+8                       0.84
+16                      0.84
+32                      0.84
+64                      0.83
+128                     0.85
+256                     0.84
+512                     0.85
+1024                    0.89
+2048                    0.91
+4096                    0.98
+8192                    1.01
+16384                   1.23
+32768                   1.62
+65536                   2.28
+131072                  3.62
+262144                  6.69
+524288                 13.82
+1048576                25.72
+2097152                50.49
+4194304               100.60
+Run osu_get_latency with flush synchronisation benchmark using 1 and 2 tasks:
+# OSU MPI_Get latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_flush
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                       0.12
+2                       0.12
+4                       0.12
+8                       0.12
+16                      0.12
+32                      0.12
+64                      0.12
+128                     0.12
+256                     0.12
+512                     0.12
+1024                    0.12
+2048                    0.13
+4096                    0.15
+8192                    0.19
+16384                   0.33
+32768                   0.74
+65536                   1.34
+131072                  2.54
+262144                  6.40
+524288                 12.95
+1048576                25.18
+2097152                50.18
+4194304                97.46
+Run osu_put_latency with lock synchronisation benchmark using 1 and 2 tasks:
+# OSU MPI_Put Latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                       0.83
+2                       0.85
+4                       0.85
+8                       0.80
+16                      0.83
+32                      0.81
+64                      0.82
+128                     0.84
+256                     0.84
+512                     0.86
+1024                    0.85
+2048                    0.90
+4096                    0.97
+8192                    0.99
+16384                   1.27
+32768                   1.58
+65536                   2.24
+131072                  3.52
+262144                  6.89
+524288                 14.46
+1048576                26.19
+2097152                50.12
+4194304                99.70
+Run osu_put_latency with flush synchronisation benchmark using 1 and 2 tasks:
+# OSU MPI_Put Latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_flush
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                       0.13
+2                       0.12
+4                       0.13
+8                       0.12
+16                      0.12
+32                      0.13
+64                      0.12
+128                     0.14
+256                     0.14
+512                     0.12
+1024                    0.13
+2048                    0.14
+4096                    0.15
+8192                    0.19
+16384                   0.33
+32768                   0.73
+65536                   1.33
+131072                  2.54
+262144                  5.73
+524288                 13.40
+1048576                25.11
+2097152                49.43
+4194304                98.72
+Run osu_get_bw with lock synchronisation benchmark using 1 and 2 tasks:
+# OSU MPI_Get Bandwidth Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                      20.70
+2                      53.44
+4                     107.14
+8                     212.83
+16                    422.19
+32                    848.55
+64                   1697.23
+128                  3369.43
+256                  6264.15
+512                 11850.48
+1024                20800.13
+2048                29062.08
+4096                32488.60
+8192                25534.99
+16384               31291.11
+32768               29362.54
+65536               33807.37
+131072              38480.87
+262144              28270.12
+524288              16097.06
+1048576             13420.21
+2097152             12366.28
+4194304             11596.49
+Run osu_get_bw with flush synchronisation benchmark using 1 and 2 tasks:
+# OSU MPI_Get Bandwidth Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_flush
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                      39.98
+2                      80.18
+4                     162.30
+8                     328.23
+16                    634.06
+32                   1281.95
+64                   2564.38
+128                  5121.66
+256                  9337.90
+512                 17932.37
+1024                27777.38
+2048                35543.21
+4096                36978.41
+8192                27089.00
+16384               28864.68
+32768               27730.84
+65536               30640.87
+131072              38115.79
+262144              27874.84
+524288              16190.97
+1048576             12986.73
+2097152             12059.11
+4194304             12090.37
+Run osu_put_bw with lock synchronisation benchmark using 1 and 2 tasks:
+# OSU MPI_Put Bandwidth Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                      20.85
+2                      50.90
+4                     108.45
+8                     212.52
+16                    426.41
+32                    843.19
+64                   1710.17
+128                  3354.50
+256                  6343.85
+512                  2503.85
+1024                21070.84
+2048                29433.55
+4096                33872.41
+8192                25752.64
+16384               25671.79
+32768               16393.71
+65536               32341.35
+131072              37807.35
+262144              26354.91
+524288              15266.08
+1048576             11925.19
+2097152             11272.74
+4194304             10739.45
+Run osu_put_bw with flush synchronisation benchmark using 1 and 2 tasks:
+# OSU MPI_Put Bandwidth Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_flush
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                      40.39
+2                      80.68
+4                     163.91
+8                     331.68
+16                    640.73
+32                   1295.28
+64                   2560.05
+128                  5119.10
+256                  9547.79
+512                 18196.86
+1024                29563.87
+2048                36484.90
+4096                37693.83
+8192                27844.31
+16384               32928.32
+32768               28152.49
+65536               32914.64
+131072              37227.96
+262144              27274.94
+524288              14313.60
+1048576             12055.49
+2097152             12189.18
+4194304             10820.59
+Run osu_latency benchmark using 1 nodes and 2 tasks:
+
+# OSU MPI Latency Test v7.5
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+1                       0.21
+2                       0.21
+4                       0.21
+8                       0.22
+16                      0.21
+32                      0.22
+64                      0.24
+128                     0.25
+256                     0.25
+512                     0.28
+1024                    0.32
+2048                    0.38
+4096                    0.47
+8192                    0.42
+16384                   0.62
+32768                   0.97
+65536                   1.58
+131072                  2.89
+262144                  5.97
+524288                 12.74
+1048576                25.07
+2097152                49.71
+4194304                98.71
+Run osu_bw benchmark using 1 nodes and 2 tasks:
+
+# OSU MPI Bandwidth Test v7.5
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       9.18
+2                      21.67
+4                      43.15
+8                      86.38
+16                    175.25
+32                    347.77
+64                    700.83
+128                  1360.63
+256                  2504.47
+512                  4279.18
+1024                 8288.47
+2048                10242.82
+4096                16964.14
+8192                34413.71
+16384               33068.20
+32768               37203.76
+65536               46417.68
+131072              49085.22
+262144              44959.27
+524288              42727.76
+1048576             42231.19
+2097152             42756.22
+4194304             42873.60
+Run osu_allreduce benchmark using 1 nodes and 128 tasks:
+srun: warning: can't honor --ntasks-per-node set to 64 which doesn't match the requested tasks 128 with the number of requested nodes 1. Ignoring --ntasks-per-node.
+
+# OSU MPI Allreduce Latency Test v7.5
+# Datatype: MPI_INT.
+# Size       Avg Latency(us)
+4                       4.78
+8                       5.22
+16                      4.78
+32                      5.23
+64                      5.36
+128                     6.94
+256                     8.49
+512                    11.05
+1024                   13.07
+2048                   15.98
+4096                   31.20
+8192                   34.52
+16384                  43.59
+32768                  63.01
+65536                 106.52
+131072                204.57
+262144                401.12
+524288                558.42
+1048576               867.38
+Run osu_oshm_put benchmark using 2 nodes and 2 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 2
+srun: ntasks              : 2
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.16 on host x1003c7s5b1n0, 1 tasks: 0
+srun: launching StepId=852197.16 on host x1003c7s5b1n1, 1 tasks: 1
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 1 tasks started
+srun: Node x1003c7s5b1n1, 1 tasks started
+# OSU OpenSHMEM Put Test v7.5
+# Size          Latency (us)
+1                       5.68
+2                       5.81
+4                       5.57
+8                       5.51
+16                      5.51
+32                      5.53
+64                      5.41
+128                     6.09
+256                     6.72
+512                     6.47
+1024                    6.50
+2048                    6.45
+4096                    6.49
+8192                    6.99
+16384                   7.49
+32768                   8.22
+65536                   9.38
+131072                 11.97
+262144                 17.52
+524288                 28.33
+1048576                49.85
+srun: Received task exit notification for 1 task of StepId=852197.16 (status=0x0000).
+srun: x1003c7s5b1n0: task 0: Completed
+srun: Received task exit notification for 1 task of StepId=852197.16 (status=0x0000).
+srun: x1003c7s5b1n1: task 1: Completed
+Run osu_oshm_get benchmark using 2 nodes and 2 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 2
+srun: ntasks              : 2
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.17 on host x1003c7s5b1n0, 1 tasks: 0
+srun: launching StepId=852197.17 on host x1003c7s5b1n1, 1 tasks: 1
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n1, 1 tasks started
+srun: Node x1003c7s5b1n0, 1 tasks started
+# OSU OpenSHMEM Get Test v7.5
+# Size          Latency (us)
+1                       2.73
+2                       2.74
+4                       2.74
+8                       2.74
+16                      2.74
+32                      2.75
+64                      2.74
+128                     2.73
+256                     2.75
+512                     2.85
+1024                    2.92
+2048                    3.12
+4096                    3.12
+8192                    3.48
+16384                   3.82
+32768                   4.55
+65536                   5.86
+131072                  8.55
+262144                 13.91
+524288                 24.67
+1048576                46.22
+srun: Received task exit notification for 1 task of StepId=852197.17 (status=0x0000).
+srun: x1003c7s5b1n0: task 0: Completed
+srun: Received task exit notification for 1 task of StepId=852197.17 (status=0x0000).
+srun: x1003c7s5b1n1: task 1: Completed
+Run osu_oshm_put_bw benchmark using 2 nodes and 2 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 2
+srun: ntasks              : 2
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.18 on host x1003c7s5b1n0, 1 tasks: 0
+srun: launching StepId=852197.18 on host x1003c7s5b1n1, 1 tasks: 1
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 1 tasks started
+srun: Node x1003c7s5b1n1, 1 tasks started
+# OSU OpenSHMEM Put Bandwidth Test v7.5
+# Size      Bandwidth (MB/s)
+1                       3.47
+2                       6.94
+4                      13.98
+8                      27.91
+16                     55.81
+32                    111.34
+64                    220.16
+128                   468.69
+256                   464.27
+512                   170.54
+1024                  342.11
+2048                  593.64
+4096                 1195.98
+8192                 2094.28
+16384                4085.79
+32768                6606.45
+65536               10796.71
+131072              14547.39
+262144              18618.18
+524288              20846.44
+1048576             22424.64
+srun: Received task exit notification for 1 task of StepId=852197.18 (status=0x0000).
+srun: x1003c7s5b1n1: task 1: Completed
+srun: Received task exit notification for 1 task of StepId=852197.18 (status=0x0000).
+srun: x1003c7s5b1n0: task 0: Completed
+Run osu_oshm_get_bw benchmark using 2 nodes and 2 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 2
+srun: ntasks              : 2
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.19 on host x1003c7s5b1n0, 1 tasks: 0
+srun: launching StepId=852197.19 on host x1003c7s5b1n1, 1 tasks: 1
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 1 tasks started
+srun: Node x1003c7s5b1n1, 1 tasks started
+# OSU OpenSHMEM Get Bandwidth Test v7.5
+# Size      Bandwidth (MB/s)
+1                       0.36
+2                       0.72
+4                       1.45
+8                       2.89
+16                      5.78
+32                     11.55
+64                     23.13
+128                    46.15
+256                    92.15
+512                   182.82
+1024                  352.63
+2048                  668.30
+4096                 1306.96
+8192                 2370.92
+16384                4277.81
+32768                7233.55
+65536               11202.74
+131072              15258.67
+262144              18805.16
+524288              21260.67
+1048576             22671.91
+srun: Received task exit notification for 1 task of StepId=852197.19 (status=0x0000).
+srun: x1003c7s5b1n0: task 0: Completed
+srun: Received task exit notification for 1 task of StepId=852197.19 (status=0x0000).
+srun: x1003c7s5b1n1: task 1: Completed
+Run osu_oshm_barrier benchmark using 2 nodes and 128 tasks:
+srun: defined options
+srun: -------------------- --------------------
+srun: (null)              : x1003c7s5b1n[0-1]
+srun: cpus-per-task       : 1
+srun: distribution        : block:block
+srun: hint                : nomultithread
+srun: jobid               : 852197
+srun: job-name            : hotlum-osu
+srun: mem                 : 446G
+srun: nodes               : 2
+srun: ntasks              : 128
+srun: ntasks-per-node     : 64
+srun: tres-per-task       : cpu:1
+srun: unbuffered          : set
+srun: verbose             : 1
+srun: -------------------- --------------------
+srun: end of defined options
+srun: jobid 852197: nodes(2):`x1003c7s5b1n[0-1]', cpu counts: 256(x2)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: CpuBindType=threads,one_thread
+srun: launching StepId=852197.20 on host x1003c7s5b1n0, 64 tasks: [0-63]
+srun: launching StepId=852197.20 on host x1003c7s5b1n1, 64 tasks: [64-127]
+srun: topology/default: init: topology Default plugin loaded
+srun: Node x1003c7s5b1n0, 64 tasks started
+srun: Node x1003c7s5b1n1, 64 tasks started
+# OSU OpenSHMEM Barrier Latency Test v7.5
+# Avg Latency(us)
+             6.76
+srun: Received task exit notification for 63 tasks of StepId=852197.20 (status=0x0000).
+srun: x1003c7s5b1n1: tasks 64-84,86-127: Completed
+srun: Received task exit notification for 63 tasks of StepId=852197.20 (status=0x0000).
+srun: x1003c7s5b1n0: tasks 0-39,41-63: Completed
+srun: Received task exit notification for 1 task of StepId=852197.20 (status=0x0000).
+srun: x1003c7s5b1n0: task 40: Completed
+srun: Received task exit notification for 1 task of StepId=852197.20 (status=0x0000).
+srun: x1003c7s5b1n1: task 85: Completed
+Run osu_get_latency with lock synchronisation benchmark using 2 and 2 tasks:
+# OSU MPI_Get latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                      18.77
+2                      18.49
+4                      18.18
+8                      18.18
+16                     18.35
+32                     18.29
+64                     18.47
+128                    18.18
+256                    18.17
+512                    18.24
+1024                   18.22
+2048                   18.40
+4096                   18.24
+8192                   18.20
+16384                  18.20
+32768                  19.71
+65536                  20.28
+131072                 23.48
+262144                 28.44
+524288                 40.30
+1048576                61.86
+2097152               104.44
+4194304               190.69
+Run osu_get_latency with flush synchronisation benchmark using 2 and 2 tasks:
+# OSU MPI_Get latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_flush
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                       8.98
+2                       8.99
+4                       8.95
+8                       8.92
+16                      8.65
+32                      8.69
+64                      8.65
+128                     8.77
+256                     8.67
+512                     8.78
+1024                    8.91
+2048                    8.86
+4096                    9.07
+8192                   10.12
+16384                  10.30
+32768                  10.61
+65536                  12.20
+131072                 14.66
+262144                 20.61
+524288                 30.62
+1048576                52.42
+2097152                95.98
+4194304               181.76
+Run osu_put_latency with lock synchronisation benchmark using 2 and 2 tasks:
+# OSU MPI_Put Latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                      19.26
+2                      18.92
+4                      18.45
+8                      18.62
+16                     18.54
+32                     19.07
+64                     19.74
+128                    19.72
+256                    20.26
+512                    20.25
+1024                   20.22
+2048                   20.08
+4096                   20.11
+8192                   20.33
+16384                  20.76
+32768                  22.00
+65536                  23.43
+131072                 25.76
+262144                 31.01
+524288                 41.92
+1048576                63.69
+2097152               106.95
+4194304               193.14
+Run osu_put_latency with flush synchronisation benchmark using 2 and 2 tasks:
+# OSU MPI_Put Latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_flush
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                      10.93
+2                      10.83
+4                      10.87
+8                      10.66
+16                     10.54
+32                     10.53
+64                     10.50
+128                    10.70
+256                    10.59
+512                    10.79
+1024                   10.82
+2048                   11.71
+4096                   12.04
+8192                   12.23
+16384                  12.45
+32768                  12.94
+65536                  14.81
+131072                 17.40
+262144                 22.54
+524288                 32.88
+1048576                54.88
+2097152                97.99
+4194304               184.30
+Run osu_get_bw with lock synchronisation benchmark using 2 and 2 tasks:
+# OSU MPI_Get Bandwidth Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       1.79
+2                       3.56
+4                       5.84
+8                      14.23
+16                     28.45
+32                     56.81
+64                    107.35
+128                   213.95
+256                   453.70
+512                   881.38
+1024                 1780.94
+2048                 3563.23
+4096                 7023.98
+8192                13053.21
+16384               16907.16
+32768               19917.44
+65536               21913.11
+131072              23050.85
+262144              23650.48
+524288              23957.24
+1048576             24108.08
+2097152             24097.95
+4194304             24091.48
+Run osu_get_bw with flush synchronisation benchmark using 2 and 2 tasks:
+# OSU MPI_Get Bandwidth Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_flush
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       2.29
+2                       4.61
+4                       9.32
+8                      18.37
+16                     36.98
+32                     73.86
+64                    137.99
+128                   299.14
+256                   590.15
+512                  1185.92
+1024                 2301.14
+2048                 4511.15
+4096                 8844.97
+8192                15665.08
+16384               19697.21
+32768               21850.72
+65536               23024.83
+131072              23641.20
+262144              23961.27
+524288              24126.43
+1048576             24195.80
+2097152             24143.11
+4194304             24113.79
+Run osu_put_bw with lock synchronisation benchmark using 2 and 2 tasks:
+# OSU MPI_Put Bandwidth Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       1.87
+2                       3.64
+4                       7.56
+8                      15.16
+16                     30.34
+32                     60.20
+64                    120.57
+128                   249.79
+256                   426.13
+512                   849.67
+1024                 1678.97
+2048                 3337.81
+4096                 6491.77
+8192                12235.42
+16384               16366.60
+32768               19553.49
+65536               21633.23
+131072              22866.14
+262144              23552.70
+524288              23895.78
+1048576             24057.61
+2097152             24164.24
+4194304             24214.34
+Run osu_put_bw with flush synchronisation benchmark using 2 and 2 tasks:
+# OSU MPI_Put Bandwidth Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_flush
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       2.49
+2                       5.06
+4                      10.05
+8                      20.29
+16                     40.62
+32                     80.23
+64                    159.03
+128                   320.50
+256                   544.14
+512                  1083.33
+1024                 2147.14
+2048                 4064.86
+4096                 8236.26
+8192                15287.47
+16384               18920.72
+32768               21307.31
+65536               22719.36
+131072              23475.48
+262144              23860.36
+524288              24061.61
+1048576             24147.23
+2097152             24208.45
+4194304             24239.98
+Run osu_latency benchmark using 2 nodes and 2 tasks:
+
+# OSU MPI Latency Test v7.5
+# Datatype: MPI_CHAR.
+# Size       Avg Latency(us)
+1                       1.72
+2                       1.71
+4                       1.71
+8                       1.69
+16                      1.69
+32                      1.69
+64                      1.71
+128                     2.23
+256                     2.33
+512                     2.39
+1024                    2.48
+2048                    2.62
+4096                    2.74
+8192                    3.01
+16384                   3.35
+32768                   5.96
+65536                   7.32
+131072                 10.01
+262144                 15.40
+524288                 26.24
+1048576                48.02
+2097152                91.62
+4194304               178.54
+Run osu_bw benchmark using 2 nodes and 2 tasks:
+
+# OSU MPI Bandwidth Test v7.5
+# Datatype: MPI_CHAR.
+# Size      Bandwidth (MB/s)
+1                       2.25
+2                       4.73
+4                       9.43
+8                      17.94
+16                     39.86
+32                     80.08
+64                    136.53
+128                   320.62
+256                   543.97
+512                  1122.62
+1024                 2356.81
+2048                 4530.97
+4096                 9521.83
+8192                17536.15
+16384               21225.40
+32768               21727.12
+65536               23005.34
+131072              23556.39
+262144              23811.99
+524288              23953.21
+1048576             24022.59
+2097152             24056.28
+4194304             24072.98
+Run osu_allreduce benchmark using 2 nodes and 128 tasks:
+
+# OSU MPI Allreduce Latency Test v7.5
+# Datatype: MPI_INT.
+# Size       Avg Latency(us)
+4                       5.83
+8                       5.74
+16                      5.74
+32                      5.77
+64                      5.95
+128                     7.13
+256                     8.45
+512                    12.67
+1024                   14.67
+2048                   17.38
+4096                   32.61
+8192                   29.41
+16384                  47.00
+32768                  57.64
+65536                 110.36
+131072                210.68
+262144                411.36
+524288                607.91
+1048576               912.48
