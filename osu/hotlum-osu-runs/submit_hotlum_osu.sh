@@ -44,7 +44,7 @@ for nodes in 1 2; do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             --output "hotlum-$exe" \
+             --output "hotlum-nodes-$nodes-$exe" \
              ${install_dir}/openshmem/$exe heap
     done
     for exe in osu_oshm_barrier; do
@@ -55,7 +55,7 @@ for nodes in 1 2; do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             --output "hotlum-$exe" \
+             --output "hotlum-nodes-$nodes-$exe" \
              ${install_dir}/openshmem/$exe
     done
     # MPI-3 RMA
@@ -71,7 +71,7 @@ for nodes in 1 2; do
                  --unbuffered \
                  --distribution=block:block \
                  --hint=nomultithread \
-                 --output "hotlum-$exe" \
+                 --output "hotlum-nodes-$nodes-$exe" \
                  ${install_dir}/mpi/one-sided/$exe  -w allocate -s $syn
         done
     done
@@ -84,7 +84,7 @@ for nodes in 1 2; do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             --output "hotlum-$exe" \
+             --output "hotlum-nodes-$nodes-$exe" \
             ${install_dir}/mpi/pt2pt/$exe
     done
 
@@ -95,7 +95,7 @@ for nodes in 1 2; do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             --output "hotlum-$exe" \
+             --output "hotlum-nodes-$nodes-$exe" \
             ${install_dir}/mpi/collective/$exe
     done
 done
