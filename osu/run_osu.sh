@@ -43,7 +43,7 @@ print_help() {
 
 machine=''
 
-while getopts "h?m:i:" option; do
+while getopts "h?m:n:i:" option; do
     case "$option" in
         h|\?)
             print_help
