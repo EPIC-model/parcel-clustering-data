@@ -21,14 +21,14 @@ Currently Loaded Modulefiles:
  11) PrgEnv-cray/8.6.0
  12) cray-openshmemx/11.7.3
  13) cpe/24.11
-Run osu_oshm_put benchmark using 1 nodes and 2 tasks:
+Run osu_oshm_put benchmark using 1 nodes and 2 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 1
@@ -39,22 +39,22 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.0 on host x1003c7s7b1n0, 2 tasks: [0-1]
+srun: launching StepId=855250.0 on host x1000c4s1b1n0, 2 tasks: [0-1]
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 2 tasks started
-srun: Received task exit notification for 2 tasks of StepId=852468.0 (status=0x0000).
-srun: x1003c7s7b1n0: tasks 0-1: Completed
-Run osu_oshm_get benchmark using 1 nodes and 2 tasks:
+srun: Node x1000c4s1b1n0, 2 tasks started
+srun: Received task exit notification for 2 tasks of StepId=855250.0 (status=0x0000).
+srun: x1000c4s1b1n0: tasks 0-1: Completed
+Run osu_oshm_get benchmark using 1 nodes and 2 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 1
@@ -65,22 +65,22 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.1 on host x1003c7s7b1n0, 2 tasks: [0-1]
+srun: launching StepId=855250.1 on host x1000c4s1b1n0, 2 tasks: [0-1]
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 2 tasks started
-srun: Received task exit notification for 2 tasks of StepId=852468.1 (status=0x0000).
-srun: x1003c7s7b1n0: tasks 0-1: Completed
-Run osu_oshm_put_bw benchmark using 1 nodes and 2 tasks:
+srun: Node x1000c4s1b1n0, 2 tasks started
+srun: Received task exit notification for 2 tasks of StepId=855250.1 (status=0x0000).
+srun: x1000c4s1b1n0: tasks 0-1: Completed
+Run osu_oshm_put_bw benchmark using 1 nodes and 2 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 1
@@ -91,22 +91,22 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.2 on host x1003c7s7b1n0, 2 tasks: [0-1]
+srun: launching StepId=855250.2 on host x1000c4s1b1n0, 2 tasks: [0-1]
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 2 tasks started
-srun: Received task exit notification for 2 tasks of StepId=852468.2 (status=0x0000).
-srun: x1003c7s7b1n0: tasks 0-1: Completed
-Run osu_oshm_get_bw benchmark using 1 nodes and 2 tasks:
+srun: Node x1000c4s1b1n0, 2 tasks started
+srun: Received task exit notification for 2 tasks of StepId=855250.2 (status=0x0000).
+srun: x1000c4s1b1n0: tasks 0-1: Completed
+Run osu_oshm_get_bw benchmark using 1 nodes and 2 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 1
@@ -117,22 +117,22 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.3 on host x1003c7s7b1n0, 2 tasks: [0-1]
+srun: launching StepId=855250.3 on host x1000c4s1b1n0, 2 tasks: [0-1]
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 2 tasks started
-srun: Received task exit notification for 2 tasks of StepId=852468.3 (status=0x0000).
-srun: x1003c7s7b1n0: tasks 0-1: Completed
-Run osu_oshm_barrier benchmark using 1 nodes and 128 tasks:
+srun: Node x1000c4s1b1n0, 2 tasks started
+srun: Received task exit notification for 2 tasks of StepId=855250.3 (status=0x0000).
+srun: x1000c4s1b1n0: tasks 0-1: Completed
+Run osu_oshm_barrier benchmark using 1 nodes and 128 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 1
@@ -143,35 +143,35 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.4 on host x1003c7s7b1n0, 128 tasks: [0-127]
+srun: launching StepId=855250.4 on host x1000c4s1b1n0, 128 tasks: [0-127]
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 128 tasks started
-srun: Received task exit notification for 127 tasks of StepId=852468.4 (status=0x0000).
-srun: x1003c7s7b1n0: tasks 0-116,118-127: Completed
-srun: Received task exit notification for 1 task of StepId=852468.4 (status=0x0000).
-srun: x1003c7s7b1n0: task 117: Completed
-Run osu_get_latency with lock synchronisation benchmark using 1 and 2 tasks:
-Run osu_get_latency with flush synchronisation benchmark using 1 and 2 tasks:
-Run osu_put_latency with lock synchronisation benchmark using 1 and 2 tasks:
-Run osu_put_latency with flush synchronisation benchmark using 1 and 2 tasks:
-Run osu_get_bw with lock synchronisation benchmark using 1 and 2 tasks:
-Run osu_get_bw with flush synchronisation benchmark using 1 and 2 tasks:
-Run osu_put_bw with lock synchronisation benchmark using 1 and 2 tasks:
-Run osu_put_bw with flush synchronisation benchmark using 1 and 2 tasks:
-Run osu_latency benchmark using 1 nodes and 2 tasks:
-Run osu_bw benchmark using 1 nodes and 2 tasks:
-Run osu_allreduce benchmark using 1 nodes and 128 tasks:
-Run osu_oshm_put benchmark using 2 nodes and 2 tasks:
+srun: Node x1000c4s1b1n0, 128 tasks started
+srun: Received task exit notification for 127 tasks of StepId=855250.4 (status=0x0000).
+srun: x1000c4s1b1n0: tasks 0-114,116-127: Completed
+srun: Received task exit notification for 1 task of StepId=855250.4 (status=0x0000).
+srun: x1000c4s1b1n0: task 115: Completed
+Run osu_get_latency with lock synchronisation benchmark using 1 and 2 tasks.
+Run osu_get_latency with flush synchronisation benchmark using 1 and 2 tasks.
+Run osu_put_latency with lock synchronisation benchmark using 1 and 2 tasks.
+Run osu_put_latency with flush synchronisation benchmark using 1 and 2 tasks.
+Run osu_get_bw with lock synchronisation benchmark using 1 and 2 tasks.
+Run osu_get_bw with flush synchronisation benchmark using 1 and 2 tasks.
+Run osu_put_bw with lock synchronisation benchmark using 1 and 2 tasks.
+Run osu_put_bw with flush synchronisation benchmark using 1 and 2 tasks.
+Run osu_latency benchmark using 1 nodes and 2 tasks.
+Run osu_bw benchmark using 1 nodes and 2 tasks.
+Run osu_allreduce benchmark using 1 nodes and 128 tasks.
+Run osu_oshm_put benchmark using 2 nodes and 2 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 2
@@ -182,26 +182,26 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.16 on host x1003c7s7b1n0, 1 tasks: 0
-srun: launching StepId=852468.16 on host x1003c7s7b1n1, 1 tasks: 1
+srun: launching StepId=855250.16 on host x1000c4s1b1n0, 1 tasks: 0
+srun: launching StepId=855250.16 on host x1000c4s1b1n1, 1 tasks: 1
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 1 tasks started
-srun: Node x1003c7s7b1n1, 1 tasks started
-srun: Received task exit notification for 1 task of StepId=852468.16 (status=0x0000).
-srun: x1003c7s7b1n0: task 0: Completed
-srun: Received task exit notification for 1 task of StepId=852468.16 (status=0x0000).
-srun: x1003c7s7b1n1: task 1: Completed
-Run osu_oshm_get benchmark using 2 nodes and 2 tasks:
+srun: Node x1000c4s1b1n0, 1 tasks started
+srun: Node x1000c4s1b1n1, 1 tasks started
+srun: Received task exit notification for 1 task of StepId=855250.16 (status=0x0000).
+srun: x1000c4s1b1n0: task 0: Completed
+srun: Received task exit notification for 1 task of StepId=855250.16 (status=0x0000).
+srun: x1000c4s1b1n1: task 1: Completed
+Run osu_oshm_get benchmark using 2 nodes and 2 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 2
@@ -212,26 +212,26 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.17 on host x1003c7s7b1n0, 1 tasks: 0
-srun: launching StepId=852468.17 on host x1003c7s7b1n1, 1 tasks: 1
+srun: launching StepId=855250.17 on host x1000c4s1b1n0, 1 tasks: 0
+srun: launching StepId=855250.17 on host x1000c4s1b1n1, 1 tasks: 1
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 1 tasks started
-srun: Node x1003c7s7b1n1, 1 tasks started
-srun: Received task exit notification for 1 task of StepId=852468.17 (status=0x0000).
-srun: x1003c7s7b1n1: task 1: Completed
-srun: Received task exit notification for 1 task of StepId=852468.17 (status=0x0000).
-srun: x1003c7s7b1n0: task 0: Completed
-Run osu_oshm_put_bw benchmark using 2 nodes and 2 tasks:
+srun: Node x1000c4s1b1n0, 1 tasks started
+srun: Node x1000c4s1b1n1, 1 tasks started
+srun: Received task exit notification for 1 task of StepId=855250.17 (status=0x0000).
+srun: x1000c4s1b1n1: task 1: Completed
+srun: Received task exit notification for 1 task of StepId=855250.17 (status=0x0000).
+srun: x1000c4s1b1n0: task 0: Completed
+Run osu_oshm_put_bw benchmark using 2 nodes and 2 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 2
@@ -242,26 +242,26 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.18 on host x1003c7s7b1n0, 1 tasks: 0
-srun: launching StepId=852468.18 on host x1003c7s7b1n1, 1 tasks: 1
+srun: launching StepId=855250.18 on host x1000c4s1b1n0, 1 tasks: 0
+srun: launching StepId=855250.18 on host x1000c4s1b1n1, 1 tasks: 1
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 1 tasks started
-srun: Node x1003c7s7b1n1, 1 tasks started
-srun: Received task exit notification for 1 task of StepId=852468.18 (status=0x0000).
-srun: x1003c7s7b1n0: task 0: Completed
-srun: Received task exit notification for 1 task of StepId=852468.18 (status=0x0000).
-srun: x1003c7s7b1n1: task 1: Completed
-Run osu_oshm_get_bw benchmark using 2 nodes and 2 tasks:
+srun: Node x1000c4s1b1n0, 1 tasks started
+srun: Node x1000c4s1b1n1, 1 tasks started
+srun: Received task exit notification for 1 task of StepId=855250.18 (status=0x0000).
+srun: x1000c4s1b1n1: task 1: Completed
+srun: Received task exit notification for 1 task of StepId=855250.18 (status=0x0000).
+srun: x1000c4s1b1n0: task 0: Completed
+Run osu_oshm_get_bw benchmark using 2 nodes and 2 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 2
@@ -272,26 +272,26 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.19 on host x1003c7s7b1n0, 1 tasks: 0
-srun: launching StepId=852468.19 on host x1003c7s7b1n1, 1 tasks: 1
+srun: launching StepId=855250.19 on host x1000c4s1b1n0, 1 tasks: 0
+srun: launching StepId=855250.19 on host x1000c4s1b1n1, 1 tasks: 1
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 1 tasks started
-srun: Node x1003c7s7b1n1, 1 tasks started
-srun: Received task exit notification for 1 task of StepId=852468.19 (status=0x0000).
-srun: x1003c7s7b1n1: task 1: Completed
-srun: Received task exit notification for 1 task of StepId=852468.19 (status=0x0000).
-srun: x1003c7s7b1n0: task 0: Completed
-Run osu_oshm_barrier benchmark using 2 nodes and 128 tasks:
+srun: Node x1000c4s1b1n1, 1 tasks started
+srun: Node x1000c4s1b1n0, 1 tasks started
+srun: Received task exit notification for 1 task of StepId=855250.19 (status=0x0000).
+srun: x1000c4s1b1n0: task 0: Completed
+srun: Received task exit notification for 1 task of StepId=855250.19 (status=0x0000).
+srun: x1000c4s1b1n1: task 1: Completed
+Run osu_oshm_barrier benchmark using 2 nodes and 128 tasks.
 srun: defined options
 srun: -------------------- --------------------
-srun: (null)              : x1003c7s7b1n[0-1]
+srun: (null)              : x1000c4s1b1n[0-1]
 srun: cpus-per-task       : 1
 srun: distribution        : block:block
 srun: hint                : nomultithread
-srun: jobid               : 852468
+srun: jobid               : 855250
 srun: job-name            : hotlum-osu
 srun: mem                 : 446G
 srun: nodes               : 2
@@ -302,30 +302,30 @@ srun: unbuffered          : set
 srun: verbose             : 1
 srun: -------------------- --------------------
 srun: end of defined options
-srun: jobid 852468: nodes(2):`x1003c7s7b1n[0-1]', cpu counts: 256(x2)
+srun: jobid 855250: nodes(2):`x1000c4s1b1n[0-1]', cpu counts: 256(x2)
 srun: Implicitly setting --exact, because -c/--cpus-per-task given.
 srun: CpuBindType=threads,one_thread
-srun: launching StepId=852468.20 on host x1003c7s7b1n0, 64 tasks: [0-63]
-srun: launching StepId=852468.20 on host x1003c7s7b1n1, 64 tasks: [64-127]
+srun: launching StepId=855250.20 on host x1000c4s1b1n0, 64 tasks: [0-63]
+srun: launching StepId=855250.20 on host x1000c4s1b1n1, 64 tasks: [64-127]
 srun: topology/default: init: topology Default plugin loaded
-srun: Node x1003c7s7b1n0, 64 tasks started
-srun: Node x1003c7s7b1n1, 64 tasks started
-srun: Received task exit notification for 63 tasks of StepId=852468.20 (status=0x0000).
-srun: x1003c7s7b1n0: tasks 0-38,40-63: Completed
-srun: Received task exit notification for 63 tasks of StepId=852468.20 (status=0x0000).
-srun: x1003c7s7b1n1: tasks 64-121,123-127: Completed
-srun: Received task exit notification for 1 task of StepId=852468.20 (status=0x0000).
-srun: x1003c7s7b1n0: task 39: Completed
-srun: Received task exit notification for 1 task of StepId=852468.20 (status=0x0000).
-srun: x1003c7s7b1n1: task 122: Completed
-Run osu_get_latency with lock synchronisation benchmark using 2 and 2 tasks:
-Run osu_get_latency with flush synchronisation benchmark using 2 and 2 tasks:
-Run osu_put_latency with lock synchronisation benchmark using 2 and 2 tasks:
-Run osu_put_latency with flush synchronisation benchmark using 2 and 2 tasks:
-Run osu_get_bw with lock synchronisation benchmark using 2 and 2 tasks:
-Run osu_get_bw with flush synchronisation benchmark using 2 and 2 tasks:
-Run osu_put_bw with lock synchronisation benchmark using 2 and 2 tasks:
-Run osu_put_bw with flush synchronisation benchmark using 2 and 2 tasks:
-Run osu_latency benchmark using 2 nodes and 2 tasks:
-Run osu_bw benchmark using 2 nodes and 2 tasks:
-Run osu_allreduce benchmark using 2 nodes and 128 tasks:
+srun: Node x1000c4s1b1n1, 64 tasks started
+srun: Node x1000c4s1b1n0, 64 tasks started
+srun: Received task exit notification for 63 tasks of StepId=855250.20 (status=0x0000).
+srun: x1000c4s1b1n0: tasks 1-63: Completed
+srun: Received task exit notification for 63 tasks of StepId=855250.20 (status=0x0000).
+srun: x1000c4s1b1n1: tasks 64-126: Completed
+srun: Received task exit notification for 1 task of StepId=855250.20 (status=0x0000).
+srun: x1000c4s1b1n1: task 127: Completed
+srun: Received task exit notification for 1 task of StepId=855250.20 (status=0x0000).
+srun: x1000c4s1b1n0: task 0: Completed
+Run osu_get_latency with lock synchronisation benchmark using 2 and 2 tasks.
+Run osu_get_latency with flush synchronisation benchmark using 2 and 2 tasks.
+Run osu_put_latency with lock synchronisation benchmark using 2 and 2 tasks.
+Run osu_put_latency with flush synchronisation benchmark using 2 and 2 tasks.
+Run osu_get_bw with lock synchronisation benchmark using 2 and 2 tasks.
+Run osu_get_bw with flush synchronisation benchmark using 2 and 2 tasks.
+Run osu_put_bw with lock synchronisation benchmark using 2 and 2 tasks.
+Run osu_put_bw with flush synchronisation benchmark using 2 and 2 tasks.
+Run osu_latency benchmark using 2 nodes and 2 tasks.
+Run osu_bw benchmark using 2 nodes and 2 tasks.
+Run osu_allreduce benchmark using 2 nodes and 128 tasks.
