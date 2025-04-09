@@ -10,6 +10,7 @@ try:
     #
 
     plt.rcParams['font.family'] = 'serif'
+    plt.rcParams['font.size'] = 14.5
 
     linestyles = ['solid', 'dashed']
     colors = ['tab:blue', 'tab:orange', 'tab:green']
@@ -22,22 +23,22 @@ try:
     }
 
     osu_tests = {
-        'osu_allreduce':            r'OSU MPI Allreduce Latency Test (v7.5)',
-        'osu_bw':                   r'OSU MPI Bandwidth Test (v7.5)',
-        'osu_get_bw_flush':         r'OSU MPI-3 RMA Get (flush) Bandwidth Test (v7.5)',
-        'osu_get_bw_lock':          r'OSU MPI-3 RMA Get (lock/unlock) Bandwidth Test (v7.5)',
-        'osu_get_latency_flush':    r'OSU MPI-3 RMA Get (flush) latency Test (v7.5)',
-        'osu_get_latency_lock':     r'OSU MPI-3 RMA Get (lock/unlock) latency Test (v7.5)',
-        'osu_latency':              r'OSU MPI Latency Test (v7.5)',
-        'osu_oshm_barrier':         r'OSU OpenSHMEM Barrier Latency Test (v7.5)',
-        'osu_oshm_get':             r'OSU OpenSHMEM Get Test (v7.5)',
-        'osu_oshm_get_bw':          r'OSU OpenSHMEM Get Bandwidth Test (v7.5)',
-        'osu_oshm_put':             r'OSU OpenSHMEM Put Test (v7.5)',
-        'osu_oshm_put_bw':          r'OSU OpenSHMEM Put Bandwidth Test (v7.5)',
-        'osu_put_bw_flush':         r'OSU MPI-3 RMA Put (flush) Bandwidth Test (v7.5)',
-        'osu_put_bw_lock':          r'OSU MPI-3 RMA Put (lock/unlock) Bandwidth Test (v7.5)',
-        'osu_put_latency_flush':    r'OSU MPI-3 RMA Put (flush) Latency Test (v7.5)',
-        'osu_put_latency_lock':     r'OSU MPI-3 RMA Put (lock/unlock) Latency Test (v7.5)'
+        'osu_allreduce':            r'MPI Allreduce Latency Test',
+        'osu_bw':                   r'MPI Bandwidth Test',
+        'osu_get_bw_flush':         r'MPI-3 RMA Get (flush) Bandwidth Test',
+        'osu_get_bw_lock':          r'MPI-3 RMA Get (lock/unlock) Bandwidth Test',
+        'osu_get_latency_flush':    r'MPI-3 RMA Get (flush) Latency Test',
+        'osu_get_latency_lock':     r'MPI-3 RMA Get (lock/unlock) Latency Test',
+        'osu_latency':              r'MPI Latency Test',
+        'osu_oshm_barrier':         r'OpenSHMEM Barrier Latency Test',
+        'osu_oshm_get':             r'OpenSHMEM Get Latency Test',
+        'osu_oshm_get_bw':          r'OpenSHMEM Get Bandwidth Test',
+        'osu_oshm_put':             r'OpenSHMEM Put Latency Test',
+        'osu_oshm_put_bw':          r'OpenSHMEM Put Bandwidth Test',
+        'osu_put_bw_flush':         r'MPI-3 RMA Put (flush) Bandwidth Test',
+        'osu_put_bw_lock':          r'MPI-3 RMA Put (lock/unlock) Bandwidth Test',
+        'osu_put_latency_flush':    r'MPI-3 RMA Put (flush) Latency Test',
+        'osu_put_latency_lock':     r'MPI-3 RMA Put (lock/unlock) Latency Test'
     }
 
     plot_types = {
@@ -65,9 +66,9 @@ try:
 
     def plot_latency(ax, dset, **kwargs):
         sizes = dset[:, 0]
-        bw = dset[:, 1]
+        lat = dset[:, 1]
 
-        ax.plot(sizes, bw, **kwargs)
+        ax.plot(sizes, lat, **kwargs)
         ax.set_xscale('log', base=10)
         ax.set_yscale('log', base=10)
         ax.set_xlabel(r'message size (B)')
@@ -170,7 +171,7 @@ try:
         axs[i].grid(which='both', zorder=-10, linestyle='dashed', linewidth=0.4)
 
         loc = 'lower right'
-        if 'latency' in osu_test:
+        if 'latency' in args.plot_type:
             loc='upper left'
 
         axs[i].legend(loc=loc, ncols=1)
