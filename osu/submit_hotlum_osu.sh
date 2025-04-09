@@ -71,7 +71,7 @@ for nodes in 1 2; do
                  --unbuffered \
                  --distribution=block:block \
                  --hint=nomultithread \
-                 --output "MACHINE-nodes-$nodes-$exe" \
+                 --output "MACHINE-nodes-$nodes-$exe_$syn" \
                  ${install_dir}/mpi/one-sided/$exe  -w allocate -s $syn
         done
     done
