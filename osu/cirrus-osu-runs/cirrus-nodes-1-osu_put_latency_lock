@@ -1,0 +1,28 @@
+# OSU MPI_Put Latency Test v7.5
+# Window creation: MPI_Win_allocate
+# Synchronization: MPI_Win_lock/unlock
+# Datatype: MPI_CHAR.
+# Size          Latency (us)
+1                       0.42
+2                       0.42
+4                       0.42
+8                       0.42
+16                      0.42
+32                      0.42
+64                      0.40
+128                     0.42
+256                     0.42
+512                     0.42
+1024                    0.42
+2048                    0.43
+4096                    0.47
+8192                    1.19
+16384                   1.75
+32768                   2.83
+65536                   4.97
+131072                  9.84
+262144                 22.53
+524288                 43.19
+1048576                81.19
+2097152               162.93
+4194304               330.54
