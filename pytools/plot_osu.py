@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import argparse
+from matplotlib.legend_handler import HandlerTuple
 
 try:
 
@@ -10,16 +11,16 @@ try:
     #
 
     plt.rcParams['font.family'] = 'serif'
-    plt.rcParams['font.size'] = 14.5
+    plt.rcParams['font.size'] = 15
 
     linestyles = ['solid', 'dashed']
     colors = ['tab:blue', 'tab:orange', 'tab:green']
     markers = ['o', 's', 'D']
 
     networks = {
-        'archer2': r'SS10',
-        'hotlum':  r'SS11',
-        'cirrus':  r'IB'
+        'archer2': r'SS10 (intra-/inter-node)',
+        'hotlum':  r'SS11 (intra-/inter-node)',
+        'cirrus':  r'IB (intra-/inter-node)'
     }
 
     osu_tests = {
@@ -50,6 +51,7 @@ try:
 
     linewidth=1
     markersize=4
+
 
     # -------------------------------
 
@@ -82,6 +84,11 @@ try:
 
 
     def make_plot(ax, osu_test, machines, dirname):
+        #comm_type = {
+            #'1': r'(intra-node)',
+            #'2': r'(inter-node)'
+        #}
+
         for j, machine in enumerate(machines):
             for i, node in enumerate(['1', '2']):
                 directory = os.path.join(dirname, machine + '-osu-runs')
@@ -99,7 +106,7 @@ try:
                     if 'bw' in osu_test:
                         plot_bandwidth(ax,
                                        dset,
-                                       label=networks[machine] + ' ' + comm_type[node],
+                                       label=networks[machine], # + ' ' + comm_type[node],
                                        linestyle=linestyles[i],
                                        color=colors[j],
                                        marker=markers[j],
@@ -108,7 +115,7 @@ try:
                     else:
                         plot_latency(ax,
                                      dset,
-                                     label=networks[machine] + ' ' + comm_type[node],
+                                     label=networks[machine], # + ' ' + comm_type[node],
                                      linestyle=linestyles[i],
                                      color=colors[j],
                                      marker=markers[j],
@@ -154,11 +161,6 @@ try:
 
     plt.rcParams['text.usetex'] = args.enable_latex
 
-    comm_type = {
-        '1': r'(intra-node)',
-        '2': r'(inter-node)'
-    }
-
     plot_type = plot_types[args.plot_type]
 
     n = len(plot_type)
@@ -174,7 +176,16 @@ try:
         if 'latency' in args.plot_type:
             loc='upper left'
 
-        axs[i].legend(loc=loc, ncols=1)
+        handles, labels = axs[i].get_legend_handles_labels()
+        axs[i].legend(loc=loc, ncols=1,
+                      handles=[[handles[0], handles[1]],
+                               [handles[2], handles[3]],
+                               [handles[4], handles[5]]],
+                      labels=[networks[args.machines[0]],
+                              networks[args.machines[1]],
+                              networks[args.machines[2]]],
+                      handlelength=3,
+                      handler_map={list: HandlerTuple(ndivide=None)})
 
         if i > 0:
             axs[i].set_ylabel(None)
