@@ -50,7 +50,7 @@ for nodes in 1 2; do
                osu_oshm_put_bw \
                osu_oshm_get_bw; do
 
-        echo "Run $exe benchmark using $nodes nodes and 2 tasks:"
+        echo "Run $exe benchmark using $nodes nodes and 2 tasks."
         srun --nodes=$nodes \
              --ntasks=2 \
              --unbuffered \
@@ -60,7 +60,7 @@ for nodes in 1 2; do
     done
 
     for exe in osu_oshm_barrier; do
-        echo "Run $exe benchmark using $nodes nodes and NTASKS tasks:"
+        echo "Run $exe benchmark using $nodes nodes and NTASKS tasks."
         srun --nodes=$nodes \
              --ntasks=NTASKS \
              --unbuffered \
@@ -75,13 +75,13 @@ for nodes in 1 2; do
                osu_put_bw; do
 
         for syn in lock flush; do
-            echo "Run $exe with $syn synchronisation benchmark using $nodes nodes and 2 tasks:"
+            echo "Run $exe with $syn synchronisation benchmark using $nodes nodes and 2 tasks."
             srun --nodes=$nodes \
                  --ntasks=2 \
                  --unbuffered \
                  --distribution=block:block \
                  --hint=nomultithread \
-                 --output "MACHINE-nodes-$nodes-$exe_$syn" \
+                 --output "MACHINE-nodes-$nodes-${exe}_${syn}" \
                  ${install_dir}/mpi/one-sided/$exe -w allocate -s $syn
         done
     done
@@ -89,7 +89,7 @@ for nodes in 1 2; do
     for exe in osu_latency \
                osu_bw; do
 
-        echo "Run $exe benchmark using $nodes nodes and 2 tasks:"
+        echo "Run $exe benchmark using $nodes nodes and 2 tasks."
         srun --nodes=$nodes \
              --ntasks=2 \
              --unbuffered \
@@ -100,7 +100,7 @@ for nodes in 1 2; do
     done
 
     for exe in osu_allreduce; do
-        echo "Run $exe benchmark using $nodes nodes and NTASKS tasks:"
+        echo "Run $exe benchmark using $nodes nodes and NTASKS tasks."
         srun --nodes=$nodes \
              --ntasks=NTASKS \
              --unbuffered \
