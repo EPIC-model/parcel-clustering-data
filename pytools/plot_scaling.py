@@ -18,10 +18,10 @@ try:
 
         def __init__(self, path, compiler_suite, test_case, use_subcomm = False):
             self.machines = set()
-            self.compilers = set()
-            self.grids = set()
-            self.comms = set()
-            self.groups = set()
+            self.compilers = {}
+            self.grids = {}
+            self.comms = {}
+            self.groups = {}
             self.path = path
             self.use_subcomm = use_subcomm
             self.compiler_suite = compiler_suite
@@ -49,21 +49,33 @@ try:
             for fname in os.listdir(path=self.path):
                 m = re.match(pattern, fname)
                 if not m is None:
-                    group = m.group(1) + '-' + m.group(2) + '-' + m.group(3) + tc + m.group(4)
-                    self.groups.add(group)
-                    self.machines.add(m.group(1))
-                    self.compilers.add(m.group(2))
-                    self.comms.add(m.group(3))
-                    self.grids.add(m.group(4))
-                    if not group in self.configs.keys():
-                        self.configs[group] = {
+                    machine = m.group(1)
+                    group = machine + '-' + m.group(2) + '-' + m.group(3) + tc + m.group(4)
+
+                    if not machine in self.configs.keys():
+                        self.configs[machine] = {}
+                        self.groups[machine] = set()
+                        self.compilers[machine] = set()
+                        self.grids[machine] = set()
+                        self.comms[machine] = set()
+                        self.groups[machine] = set()
+
+                    self.machines.add(machine)
+                    self.groups[machine].add(group)
+                    self.compilers[machine].add(m.group(2))
+                    self.comms[machine].add(m.group(3))
+                    self.grids[machine].add(m.group(4))
+
+
+                    if not group in self.configs[machine].keys():
+                        self.configs[machine][group] = {
                             'basename': group + '-nodes-',
                             'compiler': m.group(2),
                             'comm':     m.group(3),
                             'grid':     m.group(4),
                             'nodes':    []
                         }
-                    self.configs[group]['nodes'].append(int(m.group(5)))
+                    self.configs[machine][group]['nodes'].append(int(m.group(5)))
 
             self.ntasks_per_node = {}
             for fname in os.listdir(path=self.path):
@@ -76,19 +88,21 @@ try:
                                     if machine in fname:
                                         self.ntasks_per_node[machine] = result[0]
 
-            print("Found", len(self.configs.keys()), "different configurations. There are")
-            print("\t", len(self.machines), "machine(s):", self.machines)
-            print("\t", len(self.compilers), "compiler(s):", self.compilers)
-            print("\t", len(self.comms), "comm method(s):", self.comms)
-            print("\t", len(self.grids), "grid configuration(s):", self.grids)
-            print()
+            print("Found", len(self.machines), "different machines with the following configurations:")
+            for machine in self.configs.keys():
+                print("*", machine + ":")
+                print("\t", len(self.compilers[machine]), "compiler(s):", self.compilers[machine])
+                print("\t", len(self.comms[machine]), "comm method(s):", self.comms[machine])
+                print("\t", len(self.grids[machine]), "grid configuration(s):", self.grids[machine])
+                print()
 
             # sort nodes
-            for group in self.groups:
-                if not group in self.configs.keys():
-                    raise KeyError("Group '" + group + "' not found.")
-                config = self.configs[group]
-                config['nodes'].sort()
+            for machine in self.configs.keys():
+                for group in self.groups[machine]:
+                    if not group in self.configs[machine].keys():
+                        raise KeyError("Group '" + group + "' not found.")
+                    config = self.configs[machine][group]
+                    config['nodes'].sort()
 
 
         def get_data(self, config, nodes, timings):
@@ -121,9 +135,9 @@ try:
             g = re.match(pat, grid)
             return int(g.group(1)), int(g.group(2)), int(g.group(3))
 
-        def get_sorted_grids(self):
+        def get_sorted_grids(self, machine):
             triples = []
-            for grid in self.grids:
+            for grid in self.grids[[machine]]:
                 nx, ny, nz = self.get_mesh(grid)
                 triples.append((nx, ny, nz))
             triples.sort()
@@ -215,7 +229,8 @@ try:
         print("Generating a " + args.plot + " plot for " + machine + ".")
 
         if args.figure == 'single':
-            n = len(dset.comms)
+
+            n = len(dset.comms[machine])
             nrows = int(np.sqrt(n))
             ncols = int(n / nrows + 0.5)
 
@@ -228,7 +243,7 @@ try:
                                     dpi=400)
 
             axs_fl = axs.flatten()
-            comms = sorted(dset.comms)
+            comms = sorted(dset.comms[machine])
             for i, comm in enumerate(comms):
                 axs_fl[i].grid(which='both', linestyle='dashed', linewidth=0.25)
 
@@ -236,7 +251,7 @@ try:
                 # -----------------------------------------------------------
                 # Add individual scaling:
                 tag = machine + '-' + args.compiler_suite + '-' + comm + '-' + args.test_case
-                add_line(axs_fl[i], dset, tag, comm, args)
+                add_line(axs_fl[i], dset, machine, tag, comm, args)
 
                 # -----------------------------------------------------------
                 # Create legend where markers share a single legend entry:
@@ -282,7 +297,7 @@ try:
                 # Add individual scaling:
                 tag = machine + '-' + args.compiler_suite + '-' + comm + '-' + args.test_case
 
-                add_line(ax, dset, tag, comm, args)
+                add_line(ax, dset, machine, tag, comm, args)
 
                 # -----------------------------------------------------------
                 # Create legend where markers share a single legend entry:
@@ -317,7 +332,7 @@ try:
 
         cmap = plt.get_cmap(args.colour_map)
 
-        grids = dset.get_sorted_grids()
+        grids = dset.get_sorted_grids(machine)
 
         if args.figure == 'single':
 
@@ -417,6 +432,7 @@ try:
                     offset = width * (i - 0.5*n_comms)
                     add_bar(ax,
                             dset,
+                            machine,
                             tag,
                             timing,
                             comm,
@@ -449,9 +465,9 @@ try:
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-    def add_line(ax, dset, tag, comm, args):
+    def add_line(ax, dset, machine, tag, comm, args):
 
-        configs = dset.configs
+        configs = dset.configs[machine]
 
         cmap = plt.get_cmap(args.colour_map)
 
@@ -486,9 +502,9 @@ try:
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-    def add_bar(ax, dset, tag, timing, comm, args, offset, **kwargs):
+    def add_bar(ax, dset, machine, tag, timing, comm, args, offset, **kwargs):
 
-        configs = dset.configs
+        configs = dset.configs[machine]
 
         markers = args.markers
 
