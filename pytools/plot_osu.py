@@ -151,6 +151,13 @@ try:
     )
 
     parser.add_argument(
+        "--output-dir",
+        type=str,
+        default=".",
+        help="Figure save directory."
+    )
+
+    parser.add_argument(
         "--enable-latex",
         action='store_true',
         help="Use LateX for plot labels."
@@ -192,7 +199,11 @@ try:
 
     plt.tight_layout()
 
-    plt.savefig('osu-' + args.plot_type + '.pdf', bbox_inches='tight')
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+
+    plt.savefig(os.path.join(args.output_dir, 'osu-' + args.plot_type + '.pdf'),
+                bbox_inches='tight')
     plt.close()
 
 
