@@ -18,9 +18,9 @@ try:
     markers = ['o', 's', 'D']
 
     networks = {
-        'archer2': r'SS10 (intra-/inter-node)',
-        'hotlum':  r'SS11 (intra-/inter-node)',
-        'cirrus':  r'IB (intra-/inter-node)'
+        'archer2': r'on-/off-node (SS10)',
+        'hotlum':  r'on-/off-node (SS11)',
+        'cirrus':  r'on-/off-node (IB)'
     }
 
     osu_tests = {
