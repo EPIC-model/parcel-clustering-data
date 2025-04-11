@@ -25,12 +25,12 @@ try:
 
     osu_tests = {
         'osu_allreduce':            r'MPI Allreduce Latency Test',
-        'osu_bw':                   r'MPI Bandwidth Test',
+        'osu_bw':                   r'MPI P2P Bandwidth Test',
         'osu_get_bw_flush':         r'MPI-3 RMA Get (flush) Bandwidth Test',
         'osu_get_bw_lock':          r'MPI-3 RMA Get (lock/unlock) Bandwidth Test',
         'osu_get_latency_flush':    r'MPI-3 RMA Get (flush) Latency Test',
         'osu_get_latency_lock':     r'MPI-3 RMA Get (lock/unlock) Latency Test',
-        'osu_latency':              r'MPI Latency Test',
+        'osu_latency':              r'MPI P2P Latency Test',
         'osu_oshm_barrier':         r'OpenSHMEM Barrier Latency Test',
         'osu_oshm_get':             r'OpenSHMEM Get Latency Test',
         'osu_oshm_get_bw':          r'OpenSHMEM Get Bandwidth Test',
@@ -46,7 +46,8 @@ try:
         'bandwidth-put':    ['osu_oshm_put_bw', 'osu_put_bw_lock', 'osu_put_bw_flush'],
         'bandwidth-get':    ['osu_oshm_get_bw', 'osu_get_bw_lock', 'osu_get_bw_flush'],
         'latency-put':      ['osu_oshm_put', 'osu_put_latency_lock', 'osu_put_latency_flush'],
-        'latency-get':      ['osu_oshm_get', 'osu_get_latency_lock', 'osu_get_latency_flush']
+        'latency-get':      ['osu_oshm_get', 'osu_get_latency_lock', 'osu_get_latency_flush'],
+        'mpi-p2p':          ['osu_allreduce', 'osu_latency', 'osu_bw']
     }
 
     linewidth=1
@@ -122,6 +123,27 @@ try:
                                      markersize=markersize,
                                      linewidth=linewidth)
 
+        ax.set_title(osu_tests[osu_test])
+        ax.grid(which='both', zorder=-10, linestyle='dashed', linewidth=0.4)
+
+        loc = 'lower right'
+        if 'Latency' in osu_tests[osu_test]:
+            loc='upper left'
+
+        handles, labels = ax.get_legend_handles_labels()
+        ax.legend(loc=loc, ncols=1,
+                  handles=[[handles[0], handles[1]],
+                           [handles[2], handles[3]],
+                           [handles[4], handles[5]]],
+                  labels=[networks[machines[0]],
+                          networks[machines[1]],
+                          networks[machines[2]]],
+                  handlelength=3,
+                  handler_map={list: HandlerTuple(ndivide=None)})
+
+        if i > 0 and sharey:
+            axs[i].set_ylabel(None)
+
 
     parser = argparse.ArgumentParser(
             description="Generate OSU micro benchmark plot."
@@ -172,30 +194,12 @@ try:
 
     n = len(plot_type)
 
-    fig, axs = plt.subplots(nrows=1, ncols=n, sharey=True, figsize=(5*n, 5), dpi=200)
+    sharey = not (args.plot_type == "mpi-p2p")
+
+    fig, axs = plt.subplots(nrows=1, ncols=n, sharey=sharey, figsize=(5*n, 5), dpi=200)
 
     for i, osu_test in enumerate(plot_type):
         make_plot(axs[i], osu_test, args.machines, args.dirname)
-        axs[i].set_title(osu_tests[osu_test])
-        axs[i].grid(which='both', zorder=-10, linestyle='dashed', linewidth=0.4)
-
-        loc = 'lower right'
-        if 'latency' in args.plot_type:
-            loc='upper left'
-
-        handles, labels = axs[i].get_legend_handles_labels()
-        axs[i].legend(loc=loc, ncols=1,
-                      handles=[[handles[0], handles[1]],
-                               [handles[2], handles[3]],
-                               [handles[4], handles[5]]],
-                      labels=[networks[args.machines[0]],
-                              networks[args.machines[1]],
-                              networks[args.machines[2]]],
-                      handlelength=3,
-                      handler_map={list: HandlerTuple(ndivide=None)})
-
-        if i > 0:
-            axs[i].set_ylabel(None)
 
     plt.tight_layout()
 
