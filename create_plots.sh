@@ -39,6 +39,7 @@ if test "$what_to_plot" == "all" || test "$what_to_plot" == "osu"; then
     python pytools/plot_osu.py $enable_latex --dirname osu/ --plot-type bandwidth-get --output-dir figures
     python pytools/plot_osu.py $enable_latex --dirname osu/ --plot-type latency-put --output-dir figures
     python pytools/plot_osu.py $enable_latex --dirname osu/ --plot-type latency-get --output-dir figures
+    python pytools/plot_osu.py $enable_latex --dirname osu/ --plot-type mpi-p2p --output-dir figures
 fi
 
 for benchmark in "random" "read-early" "read-late"; do
