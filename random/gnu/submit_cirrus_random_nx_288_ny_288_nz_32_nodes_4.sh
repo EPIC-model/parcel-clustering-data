@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=cirrus-gnu-random
 #SBATCH --output=%x.o%j
-#SBATCH --time=00:30:00
+#SBATCH --time=01:00:00
 #SBATCH --nodes=4
 #SBATCH --tasks-per-node=36
 #SBATCH --cpus-per-task=1
@@ -40,6 +40,9 @@ echo "Setting SHMEM symmetric size"
 export SHMEM_SYMMETRIC_SIZE=1G
 export SHMEM_VERSION_DISPLAY=0
 export SHMEM_ENV_DISPLAY=0
+
+export UCX_TLS=ud,self,sm
+export UCX_UD_TIMEOUT=10m
 
 echo "Running on $SLURM_N4 nodes with $SLURM_NTASKS tasks."
 
