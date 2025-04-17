@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=cirrus-gnu-read
 #SBATCH --output=%x.o%j
-#SBATCH --time=00:30:00
+#SBATCH --time=02:30:00
 #SBATCH --nodes=8
 #SBATCH --tasks-per-node=36
 #SBATCH --cpus-per-task=1
