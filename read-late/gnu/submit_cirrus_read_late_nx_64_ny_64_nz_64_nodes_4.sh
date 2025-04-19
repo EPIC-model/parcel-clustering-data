@@ -41,6 +41,9 @@ export SHMEM_SYMMETRIC_SIZE=1G
 export SHMEM_VERSION_DISPLAY=0
 export SHMEM_ENV_DISPLAY=0
 
+export UCX_TLS=ud,self,sm 
+export UCX_UD_TIMEOUT=10m 
+
 echo "Running on $SLURM_N4 nodes with $SLURM_NTASKS tasks."
 
 module list
