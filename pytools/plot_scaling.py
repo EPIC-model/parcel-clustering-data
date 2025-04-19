@@ -6,27 +6,24 @@ import re
 import argparse
 from matplotlib.legend_handler import HandlerTuple
 
-plt.rcParams['font.family'] = 'sans'
-plt.rcParams['font.size'] = 12
 
 try:
+
+    #
+    # Global settings
+    #
+    plt.rcParams['font.family'] = 'sans'
+    plt.rcParams['font.size'] = 12
+
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     # Helper functions and classes for parsing and plotting the data:
     #
     class DataSet:
 
-        def __init__(self, path, compiler_suite, test_case, use_subcomm = False):
-            self.machines = set()
-            self.compilers = {}
-            self.grids = {}
-            self.comms = {}
-            self.groups = {}
+        def __init__(self, path, compiler_suites, test_case, use_subcomm = False):
             self.path = path
             self.use_subcomm = use_subcomm
-            self.compiler_suite = compiler_suite
-
-            self.path = os.path.join(self.path, test_case, compiler_suite)
 
             self.titles = {
                 'p2p':   r'MPI P2P + MPI P2P',
@@ -34,101 +31,124 @@ try:
                 'shmem': r'MPI P2P + SHMEM'
             }
 
-            tag = ""
+            self.ncalls_csv = "-ncalls.csv"
+            self.timing_csv = "-timings.csv"
             if self.use_subcomm:
-                tag = "subcomm-"
+                self.timing_csv = "-subcomm" + self.timing_csv
+                self.ncalls_csv = "-subcomm" + self.ncalls_csv
 
             tc = '-' + test_case + '-'
             pattern = re.compile(r"(\w*)-(\w*)-(\w*)" + tc + \
-                r"(nx-\d*-ny-\d*-nz-\d*)-nodes-(\d*)-" + tag + "timings.csv")
-
-            if not os.path.exists(self.path):
-                raise RuntimeError("Path '" + self.path + "' does not exist. Exiting.")
+                r"(nx-\d*-ny-\d*-nz-\d*)-nodes-(\d*)" + self.timing_csv)
 
             self.configs = {}
-            for fname in os.listdir(path=self.path):
-                m = re.match(pattern, fname)
-                if not m is None:
-                    machine = m.group(1)
-                    group = machine + '-' + m.group(2) + '-' + m.group(3) + tc + m.group(4)
+            for compiler_suite in compiler_suites:
+                path = os.path.join(self.path, test_case, compiler_suite)
+                if not os.path.exists(path):
+                    raise RuntimeError("Path '" + path + "' does not exist. Exiting.")
 
-                    if not machine in self.configs.keys():
-                        self.configs[machine] = {}
-                        self.groups[machine] = set()
-                        self.compilers[machine] = set()
-                        self.grids[machine] = set()
-                        self.comms[machine] = set()
-                        self.groups[machine] = set()
+                for fname in os.listdir(path=path):
+                    m = re.match(pattern, fname)
+                    if not m is None:
+                        machine = m.group(1)
+                        group = machine + '-' + m.group(2) + '-' + m.group(3) + tc + m.group(4)
 
-                    self.machines.add(machine)
-                    self.groups[machine].add(group)
-                    self.compilers[machine].add(m.group(2))
-                    self.comms[machine].add(m.group(3))
-                    self.grids[machine].add(m.group(4))
+                        if not machine in self.configs.keys():
+                            self.configs[machine] = {}
+                            self.configs[machine]['groups'] = {}
+                            self.configs[machine]['compilers'] = set()
+                            self.configs[machine]['grids'] = set()
+                            self.configs[machine]['comms'] = set()
 
+                        if not group in self.configs[machine]['groups']:
+                            self.configs[machine]['groups'][group] = {
+                                'path':     path,
+                                'basename': group + '-nodes-',
+                                'compiler': m.group(2),
+                                'comm':     m.group(3),
+                                'grid':     m.group(4),
+                                'nodes':    []
+                            }
+                        self.configs[machine]['compilers'].add(m.group(2))
+                        self.configs[machine]['comms'].add(m.group(3))
+                        self.configs[machine]['grids'].add(m.group(4))
+                        self.configs[machine]['groups'][group]['nodes'].append(int(m.group(5)))
 
-                    if not group in self.configs[machine].keys():
-                        self.configs[machine][group] = {
-                            'basename': group + '-nodes-',
-                            'compiler': m.group(2),
-                            'comm':     m.group(3),
-                            'grid':     m.group(4),
-                            'nodes':    []
-                        }
-                    self.configs[machine][group]['nodes'].append(int(m.group(5)))
+                    if "submit" in fname:
+                        with open(os.path.join(path, fname)) as lines:
+                            for line in lines:
+                                result = re.findall(r'--ntasks-per-node=(\d*)', line)
+                                if result == []:
+                                    result = re.findall(r'--tasks-per-node=(\d*)', line)
+                                if not result == []:
+                                    for machine in self.configs.keys():
+                                        if machine in fname:
+                                            self.configs[machine]['ntasks_per_node'] = result[0]
 
-            self.ntasks_per_node = {}
-            for fname in os.listdir(path=self.path):
-                if "submit" in fname:
-                    with open(os.path.join(self.path, fname)) as lines:
-                        for line in lines:
-                            result = re.findall(r'--ntasks-per-node=(\d*)', line)
-                            if not result == []:
-                                for machine in self.machines:
-                                    if machine in fname:
-                                        self.ntasks_per_node[machine] = result[0]
-
-            print("Found", len(self.machines), "different machines with the following configurations:")
+            print("Found", len(self.configs.keys()), "different machines with the following configurations:")
             for machine in self.configs.keys():
                 print("*", machine + ":")
-                print("\t", len(self.compilers[machine]), "compiler(s):", self.compilers[machine])
-                print("\t", len(self.comms[machine]), "comm method(s):", self.comms[machine])
-                print("\t", len(self.grids[machine]), "grid configuration(s):", self.grids[machine])
+                print("\t", len(self.configs[machine]['compilers']),
+                      "compiler(s):", self.configs[machine]['compilers'])
+                print("\t", len(self.configs[machine]['comms']), "comm method(s):",
+                      self.configs[machine]['comms'])
+                print("\t", len(self.configs[machine]['grids']),
+                      "grid configuration(s):", self.configs[machine]['grids'])
+                print("\t", "  number of tasks per node:", self.configs[machine]['ntasks_per_node'])
                 print()
 
             # sort nodes
             for machine in self.configs.keys():
-                for group in self.groups[machine]:
-                    if not group in self.configs[machine].keys():
-                        raise KeyError("Group '" + group + "' not found.")
-                    config = self.configs[machine][group]
+                for group in self.configs[machine]['groups'].keys():
+                    config = self.configs[machine]['groups'][group]
                     config['nodes'].sort()
 
-
-        def get_data(self, config, nodes, timings):
-            avg_data = {}
-            std_data = {}
-            for long_name in timings:
-                avg_data[long_name] = np.zeros(len(nodes))
-                std_data[long_name] = np.zeros(len(nodes))
+        def _get_data(self, config, nodes, what, dtype, csv, measure='mean-std'):
+            measure_1_data = {}
+            measure_2_data = {}
+            for long_name in what:
+                measure_1_data[long_name] = np.zeros(len(nodes))
+                measure_2_data[long_name] = np.zeros(len(nodes))
 
             for i, node in enumerate(nodes):
-                fname = config['basename'] + str(node) + '-timings.csv'
+                fname = config['basename'] + str(node) + csv
 
-                df = pd.read_csv(os.path.join(self.path, fname), dtype=np.float64)
+                df = pd.read_csv(os.path.join(config['path'], fname), dtype=dtype)
 
                 long_names = list(df.columns)
-                for timing in timings:
-                    if not timing in long_names:
-                        raise RuntimeError("Timing '" + timing + "' not in data set.")
+                for w in what:
+                    if not w in long_names:
+                        raise RuntimeError("Data '" + w + "' not in data set.")
 
-                for long_name in timings:
+                for long_name in what:
                     data = np.array(df.loc[:, long_name])
-                    avg_data[long_name][i] = data.mean()
-                    std_data[long_name][i] = data.std()
+                    if measure == 'mean-std':
+                        measure_1_data[long_name][i] = data.mean()
+                        measure_2_data[long_name][i] = data.std()
+                    elif measure == 'min-max':
+                        measure_1_data[long_name][i] = data.min()
+                        measure_2_data[long_name][i] = data.max()
+                    else:
+                        raise RuntimeError("Only 'mean-std' or 'min-max' measure.")
 
-            return avg_data, std_data
+            return measure_1_data, measure_2_data
 
+
+        def get_timing(self, config, nodes, timings):
+            return self._get_data(config=config,
+                                  nodes=nodes,
+                                  what=timings,
+                                  dtype=np.float64,
+                                  csv=self.timing_csv,
+                                  measure='mean-std')
+
+        def get_comm_stats(self, config, nodes, stats):
+            return self._get_data(config=config,
+                                  nodes=nodes,
+                                  what=stats,
+                                  dtype=np.int64,
+                                  csv=self.ncalls_csv,
+                                  measure='min-max')
 
         def get_mesh(self, grid):
             pat = re.compile(r"nx-(\d*)-ny-(\d*)-nz-(\d*)")
@@ -137,7 +157,7 @@ try:
 
         def get_sorted_grids(self, machine):
             triples = []
-            for grid in self.grids[[machine]]:
+            for grid in self.configs[machine]['grids']:
                 nx, ny, nz = self.get_mesh(grid)
                 triples.append((nx, ny, nz))
             triples.sort()
@@ -149,7 +169,7 @@ try:
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-    def add_to_plot(ax, config, timings, cmap, marker, add_label=False):
+    def add_to_plot(ax, dset, config, timings, cmap, marker, add_label=False):
         nodes = np.asarray(config['nodes'])
 
         # switch case:
@@ -166,7 +186,14 @@ try:
                 raise RuntimeError("No method called '" + config['comm'] + "'.")
         # done
 
-        avg_data, std_data = dset.get_data(config, nodes, timings)
+        timer_labels = {
+            'parcel merge (total)': "parcel merge",
+            'find nearest':         "NNS",
+            'build graphs':         "DG construction",
+            'resolve graphs':       "DG resolution"
+        }
+
+        avg_data, std_data = dset.get_timing(config, nodes, timings)
 
         label = None
         if add_label:
@@ -181,9 +208,9 @@ try:
         for i, long_name in enumerate(timings):
             label = None
             if add_label:
-                label = long_name
-            if "resolve graphs" in label:
-                label = label + ' (' + method + ')'
+                if long_name in timer_labels.keys():
+                    label = timer_labels[long_name]
+
             ax.errorbar(x=nodes,
                         y=avg_data[long_name],
                         yerr=std_data[long_name],
@@ -219,8 +246,124 @@ try:
         # 23 Jan 2025
         # https://matplotlib.org/stable/gallery/text_labels_and_annotations/legend_demo.html
         ax.legend(loc='lower left', handles=h_, labels=arg.keys(),
+                  ncols=2,
+                  columnspacing=0.8,
                   handler_map={list: HandlerTuple(ndivide=None)},
                   **kwargs)
+
+    # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    def generate_stats_plot(dset, machine, args):
+
+        print("Generating a " + args.plot + " plot for " + machine + ".")
+
+        for compiler_suite in args.compiler_suites:
+
+            if not compiler_suite in dset.configs[machine]['compilers']:
+                continue
+
+            grids = dset.get_sorted_grids(machine)
+            n = len(grids)
+            nrows = int(np.sqrt(n))
+            ncols = int(n / nrows + 0.5)
+
+            sharex = (nrows > 1)
+
+            fig, axs = plt.subplots(nrows=nrows,
+                                    ncols=ncols,
+                                    sharey=True,
+                                    sharex=sharex,
+                                    figsize=(4.5*ncols, 4.25*nrows),
+                                    dpi=400)
+            axs_fl = axs.flatten()
+
+            stats = {
+                'p2p': ['MPI P2P put', 'MPI P2P get'],
+                'rma': ['MPI RMA put', 'MPI RMA get'],
+                'shmem': ['SHMEM put', 'SHMEM get']
+            }
+
+            cmap = plt.get_cmap(args.colour_map)
+
+            comms = dset.configs[machine]['comms']
+            for i, comm in enumerate(comms):
+
+                axs_fl[i].grid(which='both', linestyle='dashed', linewidth=0.25)
+
+                stat = stats[comm]
+
+                for j, grid in enumerate(grids):
+
+
+                    #axs_fl[i].set_title(dset.titles[comm])
+                    # -----------------------------------------------------------
+                    # Add bar to figure:
+                    tag = machine + '-' + compiler_suite + '-' + comm + '-' + args.test_case + '-' + grid
+
+                    configs = dset.configs[machine]
+
+                    groups = list(configs['groups'].keys())
+
+                    n_conf = sum(tag in group for group in groups)
+
+                    for group in groups:
+
+                        if not tag in group:
+                            continue
+
+                        config = configs['groups'][group]
+
+                        nodes = np.asarray(config['nodes'])
+                        min_data, max_data = dset.get_comm_stats(config, nodes, stat)
+
+                        print(stat[0], "\tmin:", min(min_data[stat[0]]), "\tmax:", max(max_data[stat[0]]))
+                        print(stat[1], "\tmin:", min(min_data[stat[1]]), "\tmax:", max(max_data[stat[1]]))
+
+                        #axs_fl[i].plot(nodes, max_data[stat[0]],
+                                       #color=cmap(0),
+                                       #linewidth=1,
+                                       #marker=args.markers[0],
+                                       #markersize=5)
+
+                        #axs_fl[i].plot(nodes, max_data[stat[1]],
+                                       #color=cmap(1),
+                                       #linewidth=1,
+                                       #marker=args.markers[1],
+                                       #markersize=5)
+
+                    # -----------------------------------------------------------
+                    # Create legend where markers share a single legend entry:
+                    #add_legend(axs_fl[i],
+                            ##title=r'\bfseries{' + dset.titles[comm] + r'}',
+                            #alignment='left')
+
+                    #axs_fl[i].set_yscale('log', base=10)
+                    #axs_fl[i].set_xscale('log', base=2)
+
+                    #if i >= (nrows - 1) * ncols:
+                        #axs_fl[i].set_xlabel('number of nodes (1 node = ' + \
+                            #str(dset.configs[machine]['ntasks_per_node']) + ' cores)')
+
+                #if nrows > 1:
+                    #for i in range(nrows):
+                        #axs[i, 0].set_ylabel('number of calls')
+                #else:
+                    #axs[0].set_ylabel('number of calls')
+
+            ## -----------------------------------------------------------
+            ## Save figure:
+            #plt.tight_layout()
+
+            #if not os.path.exists(args.output_dir):
+                #os.makedirs(args.output_dir)
+
+            #tag = ''
+            #if dset.use_subcomm:
+                #tag = '-subcomm'
+
+            #plt.savefig(os.path.join(args.output_dir, machine + '-' + compiler_suite + \
+                #'-' + args.test_case + tag + '-comm-stats.pdf'), bbox_inches='tight')
+            #plt.close()
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -228,43 +371,81 @@ try:
 
         print("Generating a " + args.plot + " plot for " + machine + ".")
 
-        if args.figure == 'single':
+        n = len(dset.configs[machine]['comms'])
+        nrows = int(np.sqrt(n))
+        ncols = int(n / nrows + 0.5)
 
-            n = len(dset.comms[machine])
-            nrows = int(np.sqrt(n))
-            ncols = int(n / nrows + 0.5)
+        sharex = (nrows > 1)
 
-            sharex = (nrows > 1)
+        comms = sorted(dset.configs[machine]['comms'])
+
+        for compiler_suite in args.compiler_suites:
+
+            if not compiler_suite in dset.configs[machine]['compilers']:
+                continue
+
             fig, axs = plt.subplots(nrows=nrows,
                                     ncols=ncols,
                                     sharey=True,
                                     sharex=sharex,
-                                    figsize=(4.5*ncols, 5*nrows),
+                                    figsize=(4.5*ncols, 4.25*nrows),
                                     dpi=400)
-
             axs_fl = axs.flatten()
-            comms = sorted(dset.comms[machine])
+
             for i, comm in enumerate(comms):
                 axs_fl[i].grid(which='both', linestyle='dashed', linewidth=0.25)
 
                 axs_fl[i].set_title(dset.titles[comm])
                 # -----------------------------------------------------------
                 # Add individual scaling:
-                tag = machine + '-' + args.compiler_suite + '-' + comm + '-' + args.test_case
-                add_line(axs_fl[i], dset, machine, tag, comm, args)
+                tag = machine + '-' + compiler_suite + '-' + comm + '-' + args.test_case
+
+                configs = dset.configs[machine]
+
+                cmap = plt.get_cmap(args.colour_map)
+
+                markers = args.markers
+
+                groups = list(configs['groups'].keys())
+
+                n_conf = sum(tag in group for group in groups)
+
+                if n_conf > len(markers):
+                    raise RuntimeError('Not enough markers. ' + \
+                        'Please add more to the command line with --markers')
+
+                found = True
+                j = 0
+                for group in groups:
+
+                    if not tag in group:
+                        continue
+
+                    config = configs['groups'][group]
+
+                    add_to_plot(axs_fl[i],
+                                dset,
+                                config,
+                                timings=args.timings,
+                                cmap=cmap,
+                                marker=markers[j],
+                                add_label=True)
+
+                    j = j + 1
+                    found = False
 
                 # -----------------------------------------------------------
                 # Create legend where markers share a single legend entry:
                 add_legend(axs_fl[i],
-                           #title=r'\bfseries{' + dset.titles[comm] + r'}',
-                           alignment='left')
+                        ##title=r'\bfseries{' + dset.titles[comm] + r'}',
+                        alignment='left')
 
                 axs_fl[i].set_yscale('log', base=10)
                 axs_fl[i].set_xscale('log', base=2)
 
                 if i >= (nrows - 1) * ncols:
                     axs_fl[i].set_xlabel('number of nodes (1 node = ' + \
-                        str(dset.ntasks_per_node[machine]) + ' cores)')
+                        str(dset.configs[machine]['ntasks_per_node']) + ' cores)')
 
             if nrows > 1:
                 for i in range(nrows):
@@ -279,44 +460,13 @@ try:
             if not os.path.exists(args.output_dir):
                 os.makedirs(args.output_dir)
 
-            plt.savefig(os.path.join(args.output_dir, machine + '-' + args.compiler_suite + \
-                '-' + args.test_case + '-scaling.pdf'), bbox_inches='tight')
+            tag = ''
+            if dset.use_subcomm:
+                tag = '-subcomm'
+
+            plt.savefig(os.path.join(args.output_dir, machine + '-' + compiler_suite + \
+                '-' + args.test_case + tag + '-scaling.pdf'), bbox_inches='tight')
             plt.close()
-
-        else:
-            for comm in args.comm:
-                # -----------------------------------------------------------
-                # Create figure:
-                plt.figure(figsize=(8, 7), dpi=200)
-                ax = plt.gca()
-                title = dset.titles[comm]
-                ax.set_title(title)
-                ax.grid(which='both', linestyle='dashed', linewidth=0.25)
-
-                # -----------------------------------------------------------
-                # Add individual scaling:
-                tag = machine + '-' + args.compiler_suite + '-' + comm + '-' + args.test_case
-
-                add_line(ax, dset, machine, tag, comm, args)
-
-                # -----------------------------------------------------------
-                # Create legend where markers share a single legend entry:
-                add_legend(ax)
-
-                ax.set_yscale('log', base=10)
-                ax.set_xscale('log', base=2)
-                ax.set_xlabel('number of nodes (1 node = 128 cores)')
-                ax.set_ylabel('run time (s)')
-
-                # -----------------------------------------------------------
-                # Save figure:
-                plt.tight_layout()
-
-                if not os.path.exists(args.output_dir):
-                    os.makedirs(args.output_dir)
-
-                plt.savefig(os.path.join(args.output_dir, tag + '.pdf'), bbox_inches='tight')
-                plt.close()
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -334,171 +484,83 @@ try:
 
         grids = dset.get_sorted_grids(machine)
 
-        if args.figure == 'single':
+        n = len(grids)
+        nrows = int(np.sqrt(n))
+        ncols = int(n / nrows + 0.5)
 
-            n = len(grids)
-            nrows = int(np.sqrt(n))
-            ncols = int(n / nrows + 0.5)
+        # -----------------------------------------------------------
+        # Create figure:
+        fig, axs = plt.subplots(nrows=nrows,
+                                ncols=ncols,
+                                sharey=True,
+                                sharex=False,
+                                figsize=(5*ncols, 5*nrows),
+                                dpi=400)
+        axs_fl = axs.flatten()
+        for j, grid in enumerate(grids):
 
-            # -----------------------------------------------------------
-            # Create figure:
-            fig, axs = plt.subplots(nrows=nrows,
-                                    ncols=ncols,
-                                    sharey=True,
-                                    sharex=False,
-                                    figsize=(5*ncols, 5*nrows),
-                                    dpi=400)
-            axs_fl = axs.flatten()
-            for j, grid in enumerate(grids):
-
-                nx, ny, nz = dset.get_mesh(grid)
-                if args.enable_latex:
-                    title = r'$(nx = ' + str(nx) + \
-                            r')\times(ny = ' + str(ny) + \
-                            r')\times(nz = ' + str(nz) + r')$'
-                else:
-                    title = r'(nx = ' + str(nx) + \
-                            r') x (ny = ' + str(ny) + \
-                            r') x (nz = ' + str(nz) + r')'
-
-                axs[j].set_title(title)
-
-                axs[j].grid(which='both', linestyle='dashed', linewidth=0.25, axis='y')
-
-                # -----------------------------------------------------------
-                # Add individual scaling:
-                comms = sorted(args.comm)
-                n_comms = len(comms)
-                width= 0.4 / n_comms
-                for i, comm in enumerate(comms):
-                    tag = args.compiler_suite + '-' + comm + '-' + args.test_case + '-' + grid
-
-                    axs[j].axhline(y=1, linestyle='solid', color='black', linewidth=0.75)
-
-                    label = dset.titles[comm]
-                    offset = width * (i - 0.5*n_comms)
-                    add_bar(axs[j],
-                            dset,
-                            tag,
-                            timing,
-                            comm,
-                            args,
-                            offset=offset,
-                            width=width,
-                            color=cmap(i),
-                            edgecolor='black',
-                            hatch=args.hatches[i],
-                            label=label)
-
-                    axs[j].legend(loc='upper left', ncols=int((n_comms+1) / 2))
-
-                    axs[j].set_xlabel('number of nodes (1 node = 128 cores)')
-                    axs[j].set_ylim([0, 1.6])
-
-            if nrows > 1:
-                for i in range(nrows):
-                    axs[i, 0].set_ylabel('strong parallel efficiency')
+            nx, ny, nz = dset.get_mesh(grid)
+            if args.enable_latex:
+                title = r'$(nx = ' + str(nx) + \
+                        r')\times(ny = ' + str(ny) + \
+                        r')\times(nz = ' + str(nz) + r')$'
             else:
-                axs[0].set_ylabel('strong parallel efficiency')
+                title = r'(nx = ' + str(nx) + \
+                        r') x (ny = ' + str(ny) + \
+                        r') x (nz = ' + str(nz) + r')'
 
+            axs[j].set_title(title)
+
+            axs[j].grid(which='both', linestyle='dashed', linewidth=0.25, axis='y')
 
             # -----------------------------------------------------------
-            # Save figure:
-            plt.tight_layout()
-            fname = args.compiler_suite + '-' + tf + '-' + args.plot + '.pdf'
+            # Add individual scaling:
+            comms = sorted(args.comm)
+            n_comms = len(comms)
+            width= 0.4 / n_comms
+            for i, comm in enumerate(comms):
+                tag = args.compiler_suite + '-' + comm + '-' + args.test_case + '-' + grid
 
-            if not os.path.exists(args.output_dir):
-                os.makedirs(args.output_dir)
+                axs[j].axhline(y=1, linestyle='solid', color='black', linewidth=0.75)
 
-            plt.savefig(fname, bbox_inches='tight')
-            plt.close()
+                label = dset.titles[comm]
+                offset = width * (i - 0.5*n_comms)
+                add_bar(axs[j],
+                        dset,
+                        tag,
+                        timing,
+                        comm,
+                        args,
+                        offset=offset,
+                        width=width,
+                        color=cmap(i),
+                        edgecolor='black',
+                        hatch=args.hatches[i],
+                        label=label)
+
+                axs[j].legend(loc='upper left', ncols=int((n_comms+1) / 2))
+
+                axs[j].set_xlabel('number of nodes (1 node = 128 cores)')
+                axs[j].set_ylim([0, 1.6])
+
+        if nrows > 1:
+            for i in range(nrows):
+                axs[i, 0].set_ylabel('strong parallel efficiency')
         else:
-            for grid in grids:
-                # -----------------------------------------------------------
-                # Create figure:
-                plt.figure(figsize=(8, 7), dpi=200)
-                ax = plt.gca()
-                ax.grid(which='both', linestyle='dashed', linewidth=0.25, axis='y')
-
-                # -----------------------------------------------------------
-                # Add individual scaling:
-                comms = sorted(args.comm)
-                n_comms = len(comms)
-                width= 0.4 / n_comms
-                for i, comm in enumerate(comms):
-                    tag = args.compiler_suite + '-' + comm + '-' + args.test_case + '-' + grid
-
-                    label = dset.titles[comm]
-                    offset = width * (i - 0.5*n_comms)
-                    add_bar(ax,
-                            dset,
-                            machine,
-                            tag,
-                            timing,
-                            comm,
-                            args,
-                            offset=offset,
-                            width=width,
-                            color=cmap(i),
-                            edgecolor='black',
-                            hatch=args.hatches[i],
-                            label=label)
+            axs[0].set_ylabel('strong parallel efficiency')
 
 
-                ax.legend(loc='upper left', ncols=int((n_comms+1) / 2))
+        # -----------------------------------------------------------
+        # Save figure:
+        plt.tight_layout()
+        fname = args.compiler_suite + '-' + tf + '-' + args.plot + '.pdf'
 
-                ax.axhline(y=1, linestyle='dashed', color='black')
+        if not os.path.exists(args.output_dir):
+            os.makedirs(args.output_dir)
 
-                ax.set_xlabel('number of nodes (1 node = 128 cores)')
-                ax.set_ylabel('strong efficiency')
+        plt.savefig(fname, bbox_inches='tight')
+        plt.close()
 
-                # -----------------------------------------------------------
-                # Save figure:
-                plt.tight_layout()
-                fname = args.compiler_suite + '-' + grid + '-' + tf + '-' + args.plot + '.pdf'
-
-                if not os.path.exists(args.output_dir):
-                    os.makedirs(args.output_dir)
-
-                plt.savefig(fname, bbox_inches='tight')
-                plt.close()
-
-    # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-    def add_line(ax, dset, machine, tag, comm, args):
-
-        configs = dset.configs[machine]
-
-        cmap = plt.get_cmap(args.colour_map)
-
-        markers = args.markers
-
-        groups = list(configs.keys())
-
-        n_conf = sum(tag in group for group in groups)
-
-        if n_conf > len(markers):
-            raise RuntimeError('Not enough markers. ' + \
-                'Please add more to the command line with --markers')
-
-        found = True
-        i = 0
-        for group in groups:
-
-            if not tag in group:
-                continue
-
-            config = configs[group]
-
-            add_to_plot(ax,
-                        config,
-                        timings=args.timings,
-                        cmap=cmap,
-                        marker=markers[i],
-                        add_label=True)
-
-            i = i + 1
-            found = False
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -525,7 +587,7 @@ try:
 
             nodes = np.asarray(config['nodes'])
 
-            avg_data, std_data = dset.get_data(config, nodes, args.timings)
+            avg_data, std_data = dset.get_timing(config, nodes, args.timings)
 
             # Calculate strong parallel efficiency:
             #   S(p) = T(1) / T(p)
@@ -547,14 +609,14 @@ try:
     #
 
     parser = argparse.ArgumentParser(
-            description="Generate strong and weak scaling plot."
+            description="Generate benchmark plots."
     )
 
     parser.add_argument(
-        "--compiler-suite",
+        "--compiler-suites",
         type=str,
+        nargs='+',
         default="cray",
-        choices=['cray', 'gnu'],
         help="Compiler environment",
     )
 
@@ -564,14 +626,6 @@ try:
         default="random",
         choices=['random', 'read-early', 'read-late'],
         help="Test case to analyse.",
-    )
-
-    parser.add_argument(
-        "--figure",
-        type=str,
-        default='single',
-        choices=['single', 'multiple'],
-        help="Plot single figure all multiple figures.",
     )
 
     parser.add_argument(
@@ -625,8 +679,10 @@ try:
         "--plot",
         type=str,
         default='weak-strong-scaling',
-        choices=['weak-strong-scaling', 'strong-efficiency'],
-        help="Plot scaling or efficiency figures.")
+        choices=['weak-strong-scaling',
+                 'strong-efficiency',
+                 'comm-stats'],
+        help="Type of benchmark figure.")
 
     parser.add_argument(
         "--enable-latex",
@@ -651,14 +707,16 @@ try:
 
     plt.rcParams['text.usetex'] = args.enable_latex
 
-    dset = DataSet(args.path, args.compiler_suite, args.test_case, args.use_subcomm)
+    dset = DataSet(args.path, args.compiler_suites, args.test_case, args.use_subcomm)
 
-    for machine in dset.machines:
+    for machine in dset.configs.keys():
         match args.plot:
             case 'weak-strong-scaling':
                 generate_scaling_plot(dset, machine, args=args)
             case 'strong-efficiency':
                 generate_strong_efficiency_plot(dset, machine, args=args)
+            case 'comm-stats':
+                generate_stats_plot(dset, machine, args=args)
             case _:
                 # raise error even though it is impossible to land here
                 raise RuntimeError("No plotting functionality '" + args.plot + "'.")
