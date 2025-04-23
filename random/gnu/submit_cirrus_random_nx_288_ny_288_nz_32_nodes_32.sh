@@ -1,11 +1,11 @@
 #!/bin/bash
 #SBATCH --job-name=cirrus-gnu-random
 #SBATCH --output=%x.o%j
-#SBATCH --time=00:10:00
+#SBATCH --time=02:00:00
 #SBATCH --nodes=32
 #SBATCH --tasks-per-node=36
 #SBATCH --cpus-per-task=1
-#SBATCH --switches=1
+# #SBATCH --switches=1
 #SBATCH --account=e710
 #SBATCH --partition=standard
 #SBATCH --qos=standard # largescale
