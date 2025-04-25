@@ -26,7 +26,7 @@ try:
             else:
                 main_labels.append(m.group(1) + r' x ' + m.group(2) + ' x ' + m.group(3))
 
-        fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(4.5*3, 4.5), dpi=400, sharex=True)
+        fig, axs = plt.subplots(nrows=1, ncols=3, figsize=(4.5*3, 4.25), dpi=400, sharex=True)
 
         handles = []
         labels = []
@@ -113,7 +113,7 @@ try:
         t = np.array(ncfile.variables['t'])
         ncfile.close()
 
-        fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(4.5*2, 4.5), dpi=400)
+        fig, axs = plt.subplots(nrows=1, ncols=2, figsize=(4.5*2, 4.25), dpi=400)
 
 
         total = n_way_merging.sum(axis=(0,1))
