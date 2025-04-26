@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=cirrus-gnu-random
 #SBATCH --output=%x.o%j
-#SBATCH --time=00:10:00
+#SBATCH --time=01:00:00
 #SBATCH --nodes=128
 #SBATCH --tasks-per-node=36
 #SBATCH --cpus-per-task=1
