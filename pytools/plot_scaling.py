@@ -103,7 +103,7 @@ try:
                     config = self.configs[machine]['groups'][group]
                     config['nodes'].sort()
 
-        def _get_data(self, config, nodes, what, dtype, csv, measure='mean-std'):
+        def _get_data(self, config, nodes, what, dtype, csv, measure='mean-std', nruns=-1):
             measure_1_data = {}
             measure_2_data = {}
             for long_name in what:
@@ -122,6 +122,19 @@ try:
 
                 for long_name in what:
                     data = np.array(df.loc[:, long_name])
+
+                    if nruns == -1:
+                        # use all data
+                        pass
+                    elif nruns > data.size:
+                        raise RuntimeError("Only " + str(data.size) + " runs available.")
+                    else:
+                        data = data[-nruns:]
+                        if not nruns == data.size:
+                            raise RuntimeError("Something went wrong in obtaining data.")
+
+
+
                     if measure == 'mean-std':
                         measure_1_data[long_name][i] = data.mean()
                         measure_2_data[long_name][i] = data.std()
@@ -134,13 +147,14 @@ try:
             return measure_1_data, measure_2_data
 
 
-        def get_timing(self, config, nodes, timings):
+        def get_timing(self, config, nodes, timings, nruns):
             return self._get_data(config=config,
                                   nodes=nodes,
                                   what=timings,
                                   dtype=np.float64,
                                   csv=self.timing_csv,
-                                  measure='mean-std')
+                                  measure='mean-std',
+                                  nruns=nruns)
 
         def get_comm_stats(self, config, nodes, stats):
             return self._get_data(config=config,
@@ -169,7 +183,7 @@ try:
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-    def add_to_plot(ax, dset, config, timings, cmap, marker, add_label=False):
+    def add_to_plot(ax, dset, nruns, config, timings, cmap, marker, add_label=False):
         nodes = np.asarray(config['nodes'])
 
         # switch case:
@@ -193,7 +207,7 @@ try:
             'resolve graphs':       "DG resolution"
         }
 
-        avg_data, std_data = dset.get_timing(config, nodes, timings)
+        avg_data, std_data = dset.get_timing(config, nodes, timings, nruns)
 
         label = None
         if add_label:
@@ -425,7 +439,8 @@ try:
 
                     add_to_plot(axs_fl[i],
                                 dset,
-                                config,
+                                nruns=args.nruns,
+                                config=config,
                                 timings=args.timings,
                                 cmap=cmap,
                                 marker=markers[j],
@@ -701,6 +716,13 @@ try:
         type=str,
         default=".",
         help="Figure save directory."
+    )
+
+    parser.add_argument(
+        "--nruns",
+        type=int,
+        default=-1,
+        help="Number of runs to use. Default: -1 (use all available)"
     )
 
     args = parser.parse_args()
