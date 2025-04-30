@@ -1,14 +1,14 @@
 #!/bin/bash
-#SBATCH --job-name=JOBNAME
+#SBATCH --job-name=cirrus-gnu-read
 #SBATCH --output=%x.o%j
-#SBATCH --time=TIMELIMIT
-#SBATCH --nodes=NODES
+#SBATCH --time=03:30:00
+#SBATCH --nodes=128
 #SBATCH --tasks-per-node=36
 #SBATCH --cpus-per-task=1
 # #SBATCH --switches=1
 #SBATCH --account=e710
 #SBATCH --partition=standard
-#SBATCH --qos=standard # largescale
+#SBATCH --qos=largescale
 #SBATCH --exclusive
 #SBATCH --distribution=block:block
 
@@ -22,7 +22,7 @@ export OMP_PLACES=cores
 # (see also https://docs.archer2.ac.uk/user-guide/tuning/#setting-the-eager-limit-on-archer2)
 export FI_OFI_RXM_SAR_LIMIT=64K
 
-if test "COMPILER" = "gnu"; then
+if test "gnu" = "gnu"; then
     echo "Loading the GNU Compiler Collection (GCC)"
     module load libtool/2.4.7
     module load gcc/10.2.0
@@ -41,60 +41,60 @@ export SHMEM_SYMMETRIC_SIZE=1G
 export SHMEM_VERSION_DISPLAY=0
 export SHMEM_ENV_DISPLAY=0
 
-echo "Running on $SLURM_NNODES nodes with $SLURM_NTASKS tasks."
+echo "Running on $SLURM_N128 nodes with $SLURM_NTASKS tasks."
 
 module list
 
-bin_dir=BIN_DIR
+bin_dir=/work/e710/e710/mf248/gnu/bin
 PATH=${bin_dir}:$PATH
 
-for i in $(seq 1 NREPEAT); do
+for i in $(seq 1 5); do
     srun --kill-on-bad-exit \
-         --nodes=NODES \
-         --ntasks=NTASKS \
+         --nodes=128 \
+         --ntasks=4608 \
          --unbuffered \
          --distribution=block:block \
          ${bin_dir}/benchmark_read \
-         --dirname DIRNAME \
-         --ncbasename NC_BASENAME \
-         --niter NITER \
-         --offset OFFSET \
-         --nfiles NFILES \
-         --size-factor SIZE_FACTOR \
-         --csvfname "MACHINE-COMPILER-shmem-read-NAMETAG-nx-NX-ny-NY-nz-NZ-nodes-NODES" \
+         --dirname /work/e710/e710/mf248/parcel-clustering-data/rayleigh_taylor/rt-256x256x256/late-time \
+         --ncbasename epic_rt_256x256x256_late \
+         --niter 100 \
+         --offset 1 \
+         --nfiles 10 \
+         --size-factor 4.0 \
+         --csvfname "cirrus-gnu-shmem-read-late-nx-256-ny-256-nz-256-nodes-128" \
          --comm-type "shmem"
     for g in "p2p" "rma"; do
         srun --kill-on-bad-exit \
-             --nodes=NODES \
-             --ntasks=NTASKS \
+             --nodes=128 \
+             --ntasks=4608 \
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
              ${bin_dir}/benchmark_read \
-             --dirname DIRNAME \
-             --ncbasename NC_BASENAME \
-             --niter NITER \
-             --offset OFFSET \
-             --nfiles NFILES \
-             --size-factor SIZE_FACTOR \
-             --csvfname "MACHINE-COMPILER-$g-read-NAMETAG-nx-NX-ny-NY-nz-NZ-nodes-NODES" \
+             --dirname /work/e710/e710/mf248/parcel-clustering-data/rayleigh_taylor/rt-256x256x256/late-time \
+             --ncbasename epic_rt_256x256x256_late \
+             --niter 100 \
+             --offset 1 \
+             --nfiles 10 \
+             --size-factor 4.0 \
+             --csvfname "cirrus-gnu-$g-read-late-nx-256-ny-256-nz-256-nodes-128" \
              --comm-type "$g"
 
-        if test "SUBCOMM" = "true"; then
+        if test "false" = "true"; then
             srun --kill-on-bad-exit \
-                 --nodes=NODES \
-                 --ntasks=NTASKS \
+                 --nodes=128 \
+                 --ntasks=4608 \
                  --unbuffered \
                  --distribution=block:block \
                  --hint=nomultithread \
                  ${bin_dir}/benchmark_read \
-                 --dirname DIRNAME \
-                 --ncbasename NC_BASENAME \
-                 --niter NITER \
-                 --offset OFFSET \
-                 --nfiles NFILES \
-                 --size-factor SIZE_FACTOR \
-                 --csvfname "MACHINE-COMPILER-$g-read-NAMETAG-nx-NX-ny-NY-nz-NZ-nodes-NODES-subcomm" \
+                 --dirname /work/e710/e710/mf248/parcel-clustering-data/rayleigh_taylor/rt-256x256x256/late-time \
+                 --ncbasename epic_rt_256x256x256_late \
+                 --niter 100 \
+                 --offset 1 \
+                 --nfiles 10 \
+                 --size-factor 4.0 \
+                 --csvfname "cirrus-gnu-$g-read-late-nx-256-ny-256-nz-256-nodes-128-subcomm" \
                  --comm-type "$g" \
                  --subcomm
         fi
