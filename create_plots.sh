@@ -3,7 +3,8 @@
 print_help() {
     echo "Script to run plotting scripts."
     echo "Arguments:"
-    echo "    -w    what to plot, choices: 'random', 'read-early', 'read-late', 'osu', 'all'"
+    echo "    -w    what to plot,"
+    echo "          choices: 'random', 'read-early', 'read-late', 'osu', 'rayleigh-taylor' or 'all'"
     echo "    -h    print this help message"
 }
 
@@ -44,12 +45,18 @@ fi
 
 for benchmark in "random" "read-early" "read-late"; do
     if test "$what_to_plot" == "all" || test "$what_to_plot" == "$benchmark"; then
-        python pytools/plot_scaling.py --compiler-suite cray \
-                                       $enable_latex \
-                                       --test-case "$benchmark" \
-                                       --figure single \
-                                       --path ./ \
-                                       --plot weak-strong-scaling \
-                                       --output-dir figures
+        for s in "" "--use-subcomm"; do
+            python pytools/plot_scaling.py --compiler-suites 'cray' 'gnu' \
+                                           $enable_latex $s \
+                                           --test-case "$benchmark" \
+                                           --path ./ \
+                                           --plot weak-strong-scaling \
+                                           --output-dir figures
+        done
     fi
 done
+
+if test "$what_to_plot" == "all" || test "$what_to_plot" == "rayleigh-taylor"; then
+    python pytools/plot_rayleigh_taylor.py  --path rayleigh_taylor \
+                                            --output-dir figures $enable_latex
+fi

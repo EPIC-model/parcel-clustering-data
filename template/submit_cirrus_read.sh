@@ -5,7 +5,7 @@
 #SBATCH --nodes=NODES
 #SBATCH --tasks-per-node=36
 #SBATCH --cpus-per-task=1
-#SBATCH --switches=1
+# #SBATCH --switches=1
 #SBATCH --account=e710
 #SBATCH --partition=standard
 #SBATCH --qos=standard # largescale

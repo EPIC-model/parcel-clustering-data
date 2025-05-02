@@ -1,0 +1,2021 @@
+Loading the GNU Compiler Collection (GCC)
+Setting SHMEM symmetric size
+Running on  nodes with 1152 tasks.
+Currently Loaded Modulefiles:
+ 1) git/2.37.3                                                           
+ 2) epcc/utils                                                           
+ 3) /mnt/lustre/e1000/home/y07/shared/cirrus-modulefiles/epcc/setup-env  
+ 4) libtool/2.4.7                                                        
+ 5) gcc/10.2.0(default)                                                  
+ 6) openmpi/4.1.6(default)                                               
+ 7) hdf5parallel/1.14.3-gcc10-ompi416                                    
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: shmem
+ ASCII file name: cirrus-gnu-shmem-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: p2p  
+ ASCII file name: cirrus-gnu-p2p-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
+ nx         576
+ ny         576
+ nz          32
+ lx   180.00000000000000     
+ ly   180.00000000000000     
+ lz   10.000000000000000     
+ niter          10
+ nppc          20
+ min_vratio   20.000000000000000     
+ size_factor   1.2500000000000000     
+ fraction of small parcels (%)   50.000000000000000     
+ shuffle parcels T
+ seed          42
+ enabled subcommunicator F
+ variable number of parcels/cell: F
+ comm type: rma  
+ ASCII file name: cirrus-gnu-rma-random-nx-576-ny-576-nz-32-nodes-32
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9951%
+ Number of parcels after merging:              133993729
+ Fraction of merged parcels:                    36.8956%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0033%
+ Number of parcels after merging:              133988801
+ Fraction of merged parcels:                    36.8979%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0002%
+ Number of parcels after merging:              133988411
+ Fraction of merged parcels:                    36.8981%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0036%
+ Number of parcels after merging:              133989471
+ Fraction of merged parcels:                    36.8976%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0048%
+ Number of parcels after merging:              133991046
+ Fraction of merged parcels:                    36.8969%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9967%
+ Number of parcels after merging:              133996287
+ Fraction of merged parcels:                    36.8944%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0030%
+ Number of parcels after merging:              133989700
+ Fraction of merged parcels:                    36.8975%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9970%
+ Number of parcels after merging:              133995460
+ Fraction of merged parcels:                    36.8948%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     50.0042%
+ Number of parcels after merging:              133988682
+ Fraction of merged parcels:                    36.8980%
+ Number of parcels before merging:             212336640
+ Fraction of small parcels:                     49.9980%
+ Number of parcels after merging:              133996562
+ Fraction of merged parcels:                    36.8943%
+ Number of MPI ranks:                1152
+ Total number of merges:                 783448251
+ Number of close big parcels:            442641254
+ Number of 2-way mergers:                541689435
+ Number of 3-way mergers:                108444826
+ Number of 4-way mergers:                  7950915
+ Number of 5-way mergers:                   250318
+ Number of 6-way mergers:                     3021
+ Number of 7-way mergers:                        7
+ Number of 8-way mergers:                        0
