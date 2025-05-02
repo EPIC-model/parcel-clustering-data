@@ -123,7 +123,7 @@ For further information please run `bash run_read.sh -h`.
 ### List of benchmark commands performed on ARCHER2, Cirrus and Hotlum
 #### ARCHER2
 ```bash
-export RT_DATA_ROOT_DIR=/work/e710/e710/mf248/parcel-clustering/scripts/rayleigh_taylor
+export RT_DATA_ROOT_DIR=/work/e710/e710/mf248/parcel-clustering-data/rayleigh_taylor
 bash run_read.sh -m archer2 -l 64 -j 2 -u 512 -r 5 -i 100 -b ${RT_DATA_ROOT_DIR}/rt-64x64x64/early-time/epic_rt_64x64x64_early -o 1 -n 10 -s -f 1.5
 bash run_read.sh -m archer2 -l 128 -j 2 -u 2048 -r 5 -i 100 -b ${RT_DATA_ROOT_DIR}/rt-128x128x128/early-time/epic_rt_128x128x128_early -o 1 -n 10 -s -f 1.5 -t 01:00:00
 bash run_read.sh -m archer2 -l 512 -j 2 -u 1024 -r 5 -i 100 -b ${RT_DATA_ROOT_DIR}/rt-256x256x256/early-time/epic_rt_256x256x256_early -o 1 -n 10 -s -f 1.5 -t 01:30:00
