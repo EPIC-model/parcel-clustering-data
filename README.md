@@ -9,7 +9,7 @@ for general installation instructions.
 
 
 ## How to run the verification benchmark
-In order to run the code verification benchmark you need to add two machine-specific files
+In order to run the verification benchmark you need to add two machine-specific files
 to the [template](https://github.com/EPIC-model/parcel-clustering/tree/update-doc/template) directory:
 
 * `<machine>.sh`
