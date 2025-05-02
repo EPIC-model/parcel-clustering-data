@@ -1,14 +1,14 @@
 #!/bin/bash
 #SBATCH --job-name=cirrus-gnu-read
 #SBATCH --output=%x.o%j
-#SBATCH --time=02:30:00
+#SBATCH --time=04:30:00
 #SBATCH --nodes=128
 #SBATCH --tasks-per-node=36
 #SBATCH --cpus-per-task=1
 # #SBATCH --switches=1
 #SBATCH --account=e710
 #SBATCH --partition=standard
-#SBATCH --qos=standard # largescale
+#SBATCH --qos=largescale
 #SBATCH --exclusive
 #SBATCH --distribution=block:block
 
@@ -48,14 +48,13 @@ module list
 bin_dir=/work/e710/e710/mf248/gnu/bin
 PATH=${bin_dir}:$PATH
 
-sbcast --compress=none ${bin_dir}/benchmark_read /tmp/benchmark_read
 for i in $(seq 1 5); do
     srun --kill-on-bad-exit \
          --nodes=128 \
          --ntasks=4608 \
          --unbuffered \
          --distribution=block:block \
-         /tmp/benchmark_read \
+         ${bin_dir}/benchmark_read \
          --dirname /work/e710/e710/mf248/parcel-clustering-data/rayleigh_taylor/rt-256x256x256/early-time \
          --ncbasename epic_rt_256x256x256_early \
          --niter 100 \
@@ -71,7 +70,7 @@ for i in $(seq 1 5); do
              --unbuffered \
              --distribution=block:block \
              --hint=nomultithread \
-             /tmp/benchmark_read \
+             ${bin_dir}/benchmark_read \
              --dirname /work/e710/e710/mf248/parcel-clustering-data/rayleigh_taylor/rt-256x256x256/early-time \
              --ncbasename epic_rt_256x256x256_early \
              --niter 100 \
@@ -81,14 +80,14 @@ for i in $(seq 1 5); do
              --csvfname "cirrus-gnu-$g-read-early-nx-256-ny-256-nz-256-nodes-128" \
              --comm-type "$g"
 
-        if test "true" = "true"; then
+        if test "false" = "true"; then
             srun --kill-on-bad-exit \
                  --nodes=128 \
                  --ntasks=4608 \
                  --unbuffered \
                  --distribution=block:block \
                  --hint=nomultithread \
-                 /tmp/benchmark_read \
+                 ${bin_dir}/benchmark_read \
                  --dirname /work/e710/e710/mf248/parcel-clustering-data/rayleigh_taylor/rt-256x256x256/early-time \
                  --ncbasename epic_rt_256x256x256_early \
                  --niter 100 \
