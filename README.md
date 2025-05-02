@@ -96,7 +96,7 @@ the submission script:
 | BIN_DIR           | bin directory of the executable                    |
 | SUBCOMM           | if a sub-communicator should be used (optional)    |
 
-
+For further information please run `bash run_read.sh -h`.
 
 ## Random benchmark
 ### Cirrus
