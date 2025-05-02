@@ -1,7 +1,8 @@
 # Performance and scalability benchmarks of the parcel clustering algorithm
 
 ## Installation
-Please visit https://github.com/EPIC-model/parcel-clustering for general installation instructions.
+Please visit https://github.com/EPIC-model/parcel-clustering
+for general installation instructions.
 * [Installation on ARCHER2](ARCHER2.md)
 * [Installation on Cirrus](Cirrus.md)
 * [Installation on Hotlum](Hotlum.md)
@@ -9,12 +10,13 @@ Please visit https://github.com/EPIC-model/parcel-clustering for general install
 
 ## How to run the verification benchmark
 In order to run the code verification benchmark you need to add two machine-specific files
-to the directory [scripts/benchmark_verify](https://github.com/EPIC-model/parcel-clustering/tree/update-doc/scripts/benchmark_verify) directory:
+to the [template](https://github.com/EPIC-model/parcel-clustering/tree/update-doc/template) directory:
 
 * `<machine>.sh`
 * `submit_<machine>_verify.sh`
 
-where `<machine>` is the name of the computing system (or any arbitrary name). As an example of a submission script see [submit_archer2_verify.sh](scripts/benchmark_verify/submit_archer2_verify.sh).
+where `<machine>` is the name of the computing system (or any arbitrary name). As an
+example of a submission script see [submit_archer2_verify.sh](template/submit_archer2_verify.sh).
 For the verification benchmark, the submission script must specify the following placeholders:
 
 | placeholder | description                               |
@@ -26,9 +28,10 @@ For the verification benchmark, the submission script must specify the following
 | BIN_DIR     | bin directory of the executable           |
 
 The file `<machine.sh>` must contain the variable `ntasks_per_node` and two arrays
-`bins` and `compilers` that specify the location of the executables and the name of the compiler suite, respectively.
-As an example consult [archer2.sh](scripts/archer2.sh). Once these files are specified the verification benchmark can be
-started within the directory [scripts/benchmark_verify](scripts/benchmark_verify) using the following command
+`bins` and `compilers` that specify the location of the executables and the name of
+the compiler suite, respectively.
+As an example consult [archer2.sh](template/archer2.sh). Once these files are specified
+the verification benchmark can be started within the root directory using the following command
 ```bash
 bash run_verify.sh -m [machine] -s [seed] -n [number of samples] -c [communication layer]
 ```
@@ -41,8 +44,8 @@ Similarly to the verification benchmark, the random sample scaling benchmark req
 * `<machine>.sh`
 * `submit_<machine>_random.sh`
 
-Different to the verification benchmark, the submission script `submit_<machine>_random.sh` now specifies the following
-placeholders:
+Different to the verification benchmark, the submission script `submit_<machine>_random.sh` now
+specifies the following placeholders:
 
 | placeholder | description                                        |
 | ----------- | -------------------------------------------------- |
@@ -60,9 +63,9 @@ placeholders:
 | BIN_DIR     | bin directory of the executable                    |
 | SUBCOMM     | if a sub-communicator should be used (optional)    |
 
-An example is provided with [submit_archer2_random.sh](scripts/benchmark_random/submit_archer2_random.sh).
+An example is [template/submit_archer2_random.sh](templatesubmit_archer2_random.sh).
 
-A scaling study can be submitted within the directory [scripts/benchmark_random](scripts/benchmark_random) with
+A scaling study can be submitted within the root directory with
 `run_random.sh`. For further information please run `bash run_random.sh -h`.
 
 
