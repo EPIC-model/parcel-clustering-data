@@ -67,6 +67,35 @@ An example is [template/submit_archer2_random.sh](templatesubmit_archer2_random.
 A scaling study can be submitted within the root directory with
 `run_random.sh`. For further information please run `bash run_random.sh -h`.
 
+## How to run the read sample scaling benchmark
+Again, the read benchmark requires two files
+* `<machine>.sh`
+* `submit_<machine>_read.sh`
+
+The script `run_read.sh` replaces the following placeholders in
+the submission script:
+
+| placeholder       | description                                        |
+| ----------------- | -------------------------------------------------- |
+| COMPILER          | name of the compiler suite, e.g. cce, gnu          |
+| TIMELIMIT         | time limit of job                                  |
+| NTASKS_PER_NODE   | number of processes to use per node                |
+| DIRNAME           | directory ofq
+| NC_BASENAME       | base name of the EPC netCDF parcel file            |
+| NAMETAG           | to distinguish 'early' or 'late' simulation times  |
+| OFFSET            | starting index of netCDF file                      |
+| NFILES            | number of EPC netCDF parcel files                  |
+| SIZE_FACTOR       | EPIC parcel container size factor                  |
+| NREPEAT           | number of repetitions of the scaling study         |
+| NODES             | number of random samples                           |
+| NTASKS            | number of cores                                    |
+| NITER             | number of iterations per repetition                |
+| NX                | number of grid cells in the horizontal direction x |
+| NY                | number of grid cells in the horizontal direction y |
+| NZ                | number of grid cells in the vertical direction z   |
+| BIN_DIR           | bin directory of the executable                    |
+| SUBCOMM           | if a sub-communicator should be used (optional)    |
+
 
 
 ## Random benchmark
