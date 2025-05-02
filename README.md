@@ -10,13 +10,13 @@ for general installation instructions.
 
 ## How to run the verification benchmark
 In order to run the verification benchmark you need to add two machine-specific files
-to the [template](https://github.com/EPIC-model/parcel-clustering/tree/update-doc/template) directory:
+to the [template](template) directory:
 
 * `<machine>.sh`
 * `submit_<machine>_verify.sh`
 
 where `<machine>` is the name of the computing system (or any arbitrary name). As an
-example of a submission script see [submit_archer2_verify.sh](template/submit_archer2_verify.sh).
+example of a submission script see [template/submit_archer2_verify.sh](template/submit_archer2_verify.sh).
 For the verification benchmark, the submission script must specify the following placeholders:
 
 | placeholder | description                               |
@@ -27,10 +27,10 @@ For the verification benchmark, the submission script must specify the following
 | SEED        | seed for the random sample generator      |
 | BIN_DIR     | bin directory of the executable           |
 
-The file `<machine.sh>` must contain the variable `ntasks_per_node` and two arrays
+The file `<machine>.sh` must contain the variable `ntasks_per_node` and two arrays
 `bins` and `compilers` that specify the location of the executables and the name of
 the compiler suite, respectively.
-As an example consult [archer2.sh](template/archer2.sh). Once these files are specified
+As an example consult [template/archer2.sh](template/archer2.sh). Once these files are specified
 the verification benchmark can be started within the root directory using the following command
 ```bash
 bash run_verify.sh -m [machine] -s [seed] -n [number of samples] -c [communication layer]
@@ -64,7 +64,6 @@ specifies the following placeholders:
 | SUBCOMM     | if a sub-communicator should be used (optional)    |
 
 An example is [template/submit_archer2_random.sh](templatesubmit_archer2_random.sh).
-
 A scaling study can be submitted within the root directory with
 `run_random.sh`. For further information please run `bash run_random.sh -h`.
 
