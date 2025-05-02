@@ -183,7 +183,8 @@ try:
 
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-    def add_to_plot(ax, dset, nruns, config, timings, cmap, marker, add_label=False):
+    def add_to_plot(ax, dset, nruns, config, timings, cmap, marker, add_label=False,
+                    add_ideal_scaling=False):
         nodes = np.asarray(config['nodes'])
 
         # switch case:
@@ -209,16 +210,18 @@ try:
 
         avg_data, std_data = dset.get_timing(config, nodes, timings, nruns)
 
-        label = None
-        if add_label:
-            label = 'ideal scaling'
+        if add_ideal_scaling:
+            label = None
+            if add_label:
+                label = 'ideal scaling'
 
-        ax.plot(nodes,
-                avg_data[timings[0]][0] / nodes * nodes[0],
-                color='black',
-                linestyle='dashed',
-                linewidth=1,
-                label=label)
+            ax.plot(nodes,
+                    avg_data[timings[0]][0] / nodes * nodes[0],
+                    color='black',
+                    linestyle='dashed',
+                    linewidth=1,
+                    label=label)
+
         for i, long_name in enumerate(timings):
             label = None
             if add_label:
@@ -239,11 +242,12 @@ try:
     # :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
     # Create legend where markers share a single legend entry:
-    def add_legend(ax, **kwargs):
+    def add_legend(ax, add_ideal_scaling, **kwargs):
         handles, labels = ax.get_legend_handles_labels()
 
         arg = {}
-        arg['ideal scaling'] = None
+        if add_ideal_scaling:
+            arg['ideal scaling'] = None
         for t in labels:
             arg[t] = []
 
@@ -444,7 +448,8 @@ try:
                                 timings=args.timings,
                                 cmap=cmap,
                                 marker=markers[j],
-                                add_label=True)
+                                add_label=True,
+                                add_ideal_scaling=args.add_ideal_scaling)
 
                     j = j + 1
                     found = False
@@ -452,8 +457,9 @@ try:
                 # -----------------------------------------------------------
                 # Create legend where markers share a single legend entry:
                 add_legend(axs_fl[i],
-                        ##title=r'\bfseries{' + dset.titles[comm] + r'}',
-                        alignment='left')
+                           add_ideal_scaling=args.add_ideal_scaling,
+                            ##title=r'\bfseries{' + dset.titles[comm] + r'}',
+                           alignment='left')
 
                 axs_fl[i].set_yscale('log', base=10)
                 axs_fl[i].set_xscale('log', base=2)
@@ -723,6 +729,12 @@ try:
         type=int,
         default=-1,
         help="Number of runs to use. Default: -1 (use all available)"
+    )
+
+    parser.add_argument(
+        "--add-ideal-scaling",
+        action='store_true',
+        help="Add ideal scaling line to plot."
     )
 
     args = parser.parse_args()
