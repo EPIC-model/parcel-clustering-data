@@ -83,7 +83,7 @@ the submission script:
 | DIRNAME           | directory ofq
 | NC_BASENAME       | base name of the EPC netCDF parcel file            |
 | NAMETAG           | to distinguish 'early' or 'late' simulation times  |
-| OFFSET            | starting index of netCDF file                      |
+| OFFSET            | starting index of the EPIC netCDF parcel files     |
 | NFILES            | number of EPC netCDF parcel files                  |
 | SIZE_FACTOR       | EPIC parcel container size factor                  |
 | NREPEAT           | number of repetitions of the scaling study         |
