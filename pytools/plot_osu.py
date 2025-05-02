@@ -19,7 +19,7 @@ try:
 
     networks = {
         'archer2': r'AMD Rome / SS10',
-        'hotlum':  r'AMD Milan / SS11',
+        'hotlum':  r'AMD Milan / SS200',
         'cirrus':  r'Intel Broadwell / IB'
     }
 
