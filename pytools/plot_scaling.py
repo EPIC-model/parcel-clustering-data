@@ -739,6 +739,11 @@ try:
 
     args = parser.parse_args()
 
+    if args.nruns == -1:
+        print("Use all available timing data for plotting.")
+    else:
+        print("Use " + str(args.nruns) + " timing data for plotting.")
+
     plt.rcParams['text.usetex'] = args.enable_latex
 
     dset = DataSet(args.path, args.compiler_suites, args.test_case, args.use_subcomm)

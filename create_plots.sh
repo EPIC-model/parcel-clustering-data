@@ -44,6 +44,11 @@ if test "$what_to_plot" == "all" || test "$what_to_plot" == "osu"; then
 fi
 
 for benchmark in "random" "read-early" "read-late"; do
+    if test "$benchmark" == "random"; then
+        nruns=10
+    else
+        nruns=5
+    fi
     if test "$what_to_plot" == "all" || test "$what_to_plot" == "$benchmark"; then
         for s in "" "--use-subcomm"; do
             python pytools/plot_scaling.py --compiler-suites 'cray' 'gnu' \
@@ -51,7 +56,8 @@ for benchmark in "random" "read-early" "read-late"; do
                                            --test-case "$benchmark" \
                                            --path ./ \
                                            --plot weak-strong-scaling \
-                                           --output-dir figures
+                                           --output-dir figures \
+                                           --nruns $nruns
         done
     fi
 done
