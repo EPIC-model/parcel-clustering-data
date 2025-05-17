@@ -205,7 +205,7 @@ try:
             'parcel merge (total)': "parcel merge",
             'find nearest':         "NNS",
             'build graphs':         "DG construction",
-            'resolve graphs':       "DG resolution"
+            'resolve graphs':       "DG pruning"
         }
 
         avg_data, std_data = dset.get_timing(config, nodes, timings, nruns)
